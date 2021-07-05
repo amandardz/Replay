@@ -3,7 +3,7 @@ import './styles.css'
 
 function Signup() {
   return (
-    <form>
+    <form id='signup-form'>
       <h2 className='text-center mb-3'>Signup</h2>
       <div className='d-flex flex-row mb-2 nameContainer'>
         <div className='pe-2 nameInputContainer'>
@@ -28,7 +28,7 @@ function Signup() {
         <input type='password' className='form-control' id='password-signup'></input>
       </div>
       <div className='d-flex justify-content-center'>
-        <button classtype="submit" className="btn btn-primary">Signup</button>
+        <button type="submit" className="btn btn-primary">Signup</button>
       </div>
     </form>
   )
