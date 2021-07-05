@@ -26,8 +26,12 @@
     box-shadow: 5px 10px 8px gray;
     width: 40%;
   }
-}
 
-@media only screen and (min-width: 992px) {
-  
+  .nameContainer {
+    width: 100%;
+  }
+
+  .nameInputContainer {
+    width: 50%;
+  }
 }

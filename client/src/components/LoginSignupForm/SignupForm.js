@@ -5,12 +5,12 @@ function Signup() {
   return (
     <form>
       <h2 className='text-center mb-3'>Signup</h2>
-      <div className='d-flex flex-row mb-2'>
-        <div className='pe-2'>
+      <div className='d-flex flex-row mb-2 nameContainer'>
+        <div className='pe-2 nameInputContainer'>
           <label className='form-label m-0'>First Name</label>
           <input type='text' className='form-control' id='userFirstName'></input>
         </div>
-        <div>
+        <div className='nameInputContainer'>
           <label className='form-label m-0'>Last Name</label>
           <input type='text' className='form-control' id='userLastName'></input>
         </div>
