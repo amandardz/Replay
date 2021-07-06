@@ -16,7 +16,7 @@ function DashboardNav() {
           </li>
           <li>
             <a href='/search' className='nav-link py-3 border-bottom' title='Search' data-bs-toggle='tooltip' data-bs-placement='right'>
-              <i className='bi bi-speedometer2'><span>Search</span></i>
+              <i className='bi bi-search'><span>Search</span></i>
             </a>
           </li>
           <li>
