@@ -1,10 +1,10 @@
-import React, { Component } from "react";
-import Credentials from "./pages/Credentials";
+import React from "react";
+import Dashboard from "./pages/Dashboard";
 
 function App() {
-  return ( 
-  <Credentials />
-  )
+  return <>
+  <Dashboard />
+  </>
 }
 
 export default App;
