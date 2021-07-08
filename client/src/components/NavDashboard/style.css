@@ -1,0 +1,18 @@
+.dashNav {
+  width: 50%;
+}
+
+.mainContainer {
+  width: 100%;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 1200px) {
+  .dashNav {
+    width: 20%
+  }
+}
