@@ -1,22 +1,19 @@
 import React from "react";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import Credentials from "./pages/Credentials";
-import Homepage from "./pages/Homepage";
-import Dashboard from "./pages/Dashboard";
-import Search from "./pages/Search";
+import { BrowserRouter } from "react-router-dom";
+import DashboardNav from "./components/DashboardNav";
+import Container from "./pages/Container";
+
 
 function App() {
   return <> 
   <BrowserRouter>
-    <div>
-      <Credentials />
-      <Navbar />
-      <Switch>
-        <Route exact path={["/", "/home"]} component={Homepage} />
-        <Route exact path="/login" component={Credentials} />
-        <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/search" component={Search} />
-      </Switch>
+    <div className="row">
+      <div className="col">
+        <DashboardNav />
+      </div>
+      <div className="col">
+        <Container />
+      </div>
     </div>
   </BrowserRouter>
   </>

@@ -1,5 +1,5 @@
 import React from 'react';
-import DashboardNav from '../components/Navbars/DashboardNav';
+import DashboardNav from '../components/DashboardNav';
 
 function Dashboard() {
   return (
