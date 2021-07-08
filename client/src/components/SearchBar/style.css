@@ -1,0 +1,14 @@
+#search-bar {
+    width: 80%;
+}
+  
+#search-bar i {
+    font-size: large;
+}
+
+@media only screen and (min-width: 768px) {
+
+    #search-bar input, #search-bar i {
+        font-size: x-large;
+    }
+}

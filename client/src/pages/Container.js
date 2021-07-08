@@ -6,7 +6,8 @@ import Dashboard from "./Dashboard";
 import Search from "./Search";
 
 function Container() {
-    return <main>
+    return (
+    <main>
         <Switch>
             <Route exact path={["/", "/home"]} component={Homepage} />
             <Route exact path="/login" component={Credentials} />
@@ -14,6 +15,6 @@ function Container() {
             <Route exact path="/search" component={Search} />
         </Switch>
     </main>
-}
+)}
 
 export default Container;
