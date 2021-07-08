@@ -5,12 +5,16 @@ import Search from "../../pages/Search";
 
 function NavSearch() {
     return <>
-    <div className="col">
+    <div className='dashNav'>
         <DashboardNav />
     </div>
-    <div className="col">
-        <SearchBar />
-        <Search />
+    <div className='mainContainer'>
+        <div className='searchContainer'>
+            <SearchBar />
+        </div>
+        <div>
+            <Search />
+        </div>
     </div>
     </>
 }
