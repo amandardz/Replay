@@ -3,7 +3,7 @@ const axios = require('axios');
 require('dotenv').config();
 const qs = require('qs');
 
-router.get('/token', async (req, res) => {
+router.get('/', async (req, res) => {
   console.log('HERE!!!', process.env.SPOTIFY_CLIENT_ID)
 
   const clientId = process.env.SPOTIFY_CLIENT_ID;
