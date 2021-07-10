@@ -1,5 +1,5 @@
 import React from "react";
-import DashboardNav from "../DashboardNav";
+import Navbar from "../Navbar";
 import SearchBar from "../SearchBar";
 import Dashboard from "../../pages/Dashboard";
 import './style.css'
@@ -7,7 +7,7 @@ import './style.css'
 function NavDashboard() {
     return <>
     <div className='dashNav'>
-        <DashboardNav />
+        <Navbar />
     </div>
     <div className='mainContainer'>
         <div className='searchContainer'>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-function DashboardNav() {
+function Navbar() {
   return (
     <nav className='d-flex flex-column bg-light'>
       <a href='/dashboard' id='logo-icon' className='link-dark text-decoration-none' title='Logo' data-bs-toggle='tooltip' data-bs-placement='right'>
@@ -33,4 +33,4 @@ function DashboardNav() {
   )
 }
 
-export default DashboardNav;
+export default Navbar;
