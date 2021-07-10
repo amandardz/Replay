@@ -2,6 +2,7 @@ import React from "react";
 import DashboardNav from "../DashboardNav";
 import SearchBar from "../SearchBar";
 import Search from "../../pages/Search";
+import './style.css'
 
 function NavSearch() {
     return <>
