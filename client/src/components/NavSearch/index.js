@@ -1,12 +1,12 @@
 import React from "react";
-import DashboardNav from "../DashboardNav";
+import Navbar from "../Navbar";
 import SearchBar from "../SearchBar";
 import Search from "../../pages/Search";
 
 function NavSearch() {
     return <>
     <div className='dashNav'>
-        <DashboardNav />
+        <Navbar />
     </div>
     <div className='mainContainer'>
         <div className='searchContainer'>
