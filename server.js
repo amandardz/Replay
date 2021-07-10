@@ -5,7 +5,9 @@ const app = express();
 const routes = require('./routes')
 
 const mongoose = require('mongoose');
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/app_name");
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/replay", {
+  useUnifiedTopology: true
+});
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
@@ -16,7 +18,7 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
-app.use(routes)
+app.use(routes);
 
 
 // Send every request to the React app
