@@ -12,7 +12,7 @@
 ## User Story
 As a music enthusiast. I want to generate playlist based my taste in music. So that I can create playlist for every occasion. 
 
-## API 
+## API(s) 
 - Spotify 
 - Axios
-- Soundcloud
+

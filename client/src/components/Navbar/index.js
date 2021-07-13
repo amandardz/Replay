@@ -1,7 +1,7 @@
 import React from 'react';
 import './styles.css';
 
-function DashboardNav() {
+function Navbar() {
   return (
     <nav className='d-flex flex-column bg-light'>
       <a href='/dashboard' id='logo-icon' className='link-dark text-decoration-none' title='Logo' data-bs-toggle='tooltip' data-bs-placement='right'>
@@ -18,9 +18,9 @@ function DashboardNav() {
               <i className='bi bi-search'><span>Search</span></i>
           </li>
         </a>
-        <a href='/playlist' className='nav-link py-3 border-bottom' title='Playlist' data-bs-toggle='tooltip' data-bs-placement='right'>
+        <a href='/dashboard' className='nav-link py-3 border-bottom' title='Playlist' data-bs-toggle='tooltip' data-bs-placement='right'>
           <li>
-              <i className='bi bi-collection-play'><span>Playlist</span></i>
+              <i className='bi bi-collection-play'><span>Playlists</span></i>
           </li>
         </a>
       </ul>
@@ -33,4 +33,4 @@ function DashboardNav() {
   )
 }
 
-export default DashboardNav;
+export default Navbar;
