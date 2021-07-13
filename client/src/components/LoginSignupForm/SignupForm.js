@@ -1,5 +1,6 @@
 import React from 'react';
 import './styles.css';
+import auth from '../../utils/auth';
 
 const signupFormHandler = async (e) => {
   e.preventDefault();
@@ -18,7 +19,11 @@ const signupFormHandler = async (e) => {
     });
 
     if (response.ok) {
-      document.location.replace('/dashboard');
+      auth.login(() => {
+        // If successful, redirect the browser to the dashboard page
+        
+        document.location.replace('/dashboard');
+      });
     } else {
       alert(response.statusText);
     }

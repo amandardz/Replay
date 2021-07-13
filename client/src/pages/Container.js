@@ -10,9 +10,10 @@ function Container() {
     <main>
         <Switch>
             <Route exact path={["/", "/home"]} component={Homepage} />
-            <Route exact path="/login" component={Credentials} />
-            <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/search" component={Search} />
+          <Route exact path="/login" component={Credentials} />
+          <ProtectedRoute exact path="/dashboard" component={NavDashboard} />
+          <ProtectedRoute exact path="/search" component={NavSearch} />
+          <Route path="*" component={() => "404 NOT FOUND"} />
         </Switch>
     </main>
 )}
