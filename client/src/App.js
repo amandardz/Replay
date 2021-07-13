@@ -3,7 +3,7 @@ import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Credentials from "./pages/Credentials";
 import Homepage from "./pages/Homepage";
 import NavDashboard from "./components/NavDashboard";
-import NavSearch from "./components/NavSearch";
+import Search from "./pages/Search";
 
 function App() {
   return <> 
@@ -13,7 +13,7 @@ function App() {
           <Route exact path={["/", "/home"]} component={Homepage} />
           <Route exact path="/login" component={Credentials} />
           <Route exact path="/dashboard" component={NavDashboard} />
-          <Route exact path="/search" component={NavSearch} />
+          <Route exact path="/search" component={Search} />
         </Switch>
       </div>
   </BrowserRouter>
