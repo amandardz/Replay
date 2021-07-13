@@ -6,14 +6,14 @@ import './styles.css'
 function LoginSignupFunction() {
   return (
     <div id='credentialContainer'>
-    <div id='signupForm' className='credentialForms'>
-      <SignupForm />
-    </div>
+      <div id='signupForm' className='credentialForms'>
+        <SignupForm />
+      </div>
 
-    <div id='loginForm' className='credentialForms'>
-      <LoginForm />
+      <div id='loginForm' className='credentialForms'>
+        <LoginForm />
+      </div>
     </div>
-  </div>
   )
 }
 
