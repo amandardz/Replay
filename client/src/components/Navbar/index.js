@@ -18,9 +18,9 @@ function Navbar() {
               <i className='bi bi-search'><span>Search</span></i>
           </li>
         </a>
-        <a href='/playlist' className='nav-link py-3 border-bottom' title='Playlist' data-bs-toggle='tooltip' data-bs-placement='right'>
+        <a href='/dashboard' className='nav-link py-3 border-bottom' title='Playlist' data-bs-toggle='tooltip' data-bs-placement='right'>
           <li>
-              <i className='bi bi-collection-play'><span>Playlist</span></i>
+              <i className='bi bi-collection-play'><span>Playlists</span></i>
           </li>
         </a>
       </ul>
