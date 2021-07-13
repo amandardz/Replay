@@ -1,4 +1,6 @@
 const express = require("express");
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
 const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -8,6 +10,15 @@ const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/replay", {
   useUnifiedTopology: true
 });
+
+const options = {
+  mongoUrl: process.env.MONGODB_URI || "mongodb://localhost/replay"
+};
+
+app.use(session({
+  secret: 'foo',
+  store: MongoStore.create(options)
+}));
 
 // Define middleware here
 app.use(express.urlencoded({ extended: true }));
