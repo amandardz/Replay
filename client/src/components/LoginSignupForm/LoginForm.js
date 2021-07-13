@@ -1,6 +1,7 @@
 import React from 'react';
+import auth from '../../utils/auth';
 
-const loginFormHandler = async (e) => {
+const loginFormHandler = async (e, props) => {
   e.preventDefault();
 
   // Collect values from the login form
@@ -17,19 +18,20 @@ const loginFormHandler = async (e) => {
       headers: { 'Content-Type': 'application/json' },
     });
 
-    if (response.ok) {
-      // If successful, redirect the browser to the profile page
-      
-      document.location.replace('/dashboard');
-    } else {
-      alert(response.statusText);
-    }
+    if(response.ok) {
+      auth.login(() => {
+        // If successful, redirect the browser to the dashboard page
+        
+        props.history.push("/dashboard");
+      });
+    };
+
   } else {
     alert("Please enter username and password.")
   }
 };
 
-function Login() {
+function Login(props) {
   return (
     <form id='login-form' onSubmit={(e) => loginFormHandler(e)}>
       <h2 className='text-center'>Login</h2>
@@ -42,7 +44,7 @@ function Login() {
         <input type='password' className='form-control' id='password-login'></input>
       </div>
       <div className='d-flex justify-content-center'>
-        <button type="submit" className="btn btn-primary">Login</button>
+        <button type="submit" className="btn btn-primary" onClick={() => {document.location.replace("/dashboard")}}>Login</button>
       </div>
     </form>
   )

@@ -1,7 +1,8 @@
 import React from 'react';
 import './styles.css';
+import auth from '../../utils/auth';
 
-function Navbar() {
+function Navbar(props) {
   return (
     <nav className='d-flex flex-column bg-light'>
       <a href='/dashboard' id='logo-icon' className='link-dark text-decoration-none' title='Logo' data-bs-toggle='tooltip' data-bs-placement='right'>
@@ -25,7 +26,7 @@ function Navbar() {
         </a>
       </ul>
       <div id='logout-icon' className='border-top'>
-        <a href='/logout' className='nav-link py-3 border-bottom' title='Logout' data-bs-toggle='tooltip' data-bs-placement='right'>
+        <a href='/logout' className='nav-link py-3 border-bottom' title='Logout' data-bs-toggle='tooltip' data-bs-placement='right' onClick={() => {auth.logout(() => {props.history.push('/')})}}>
           <i className='bi bi-door-open'><span>Logout</span></i>
         </a>
       </div>
