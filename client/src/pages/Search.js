@@ -13,7 +13,7 @@ function Search() {
     const [token, setToken] = useState('');
     const [search, setSearch] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [results, setResults] = useState(null);
+    const [results, setResults] = useState('');
     console.log(results)
 
     useEffect(() => {
