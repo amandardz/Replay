@@ -1,11 +1,21 @@
 const router = require('express').Router();
 const { User } = require('../../models');
+const bcrypt = require("bcryptjs");
 
 router.post('/', async (req, res) => {
   try {
-    const userData = await User.create(req.body);
+    const userData = await User.create({
+      ...req.body,
+      password: bcrypt.hashSync(req.body.password, 8)
+    });
 
-    res.status(200).json(userData);
+    req.session.save(() => {
+      req.session.user_id = userData.id;
+      req.session.logged_in = true;
+
+      res.status(200).json({ user: userData, message: "You are now signed up."});
+    })
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -14,20 +24,16 @@ router.post('/', async (req, res) => {
 
 router.post('/login', async (req, res) => {
     try {
-      const userData = await User.findOne({
-        where: {
-          email: req.body.email,
-        },
-      });
+      const userData = await User.findOne({ username: req.body.username }).exec();
   
       if (!userData) {
         res
           .status(400)
-          .json({ message: 'Incorrect email Please try again!' });
+          .json({ message: 'Incorrect username. Please try again!' });
         return;
       }
   
-      const validPassword = await userData.checkPassword(req.body.password);
+      const validPassword = await userData.comparePassword(req.body.password);
   
       if (!validPassword) {
         res
@@ -36,10 +42,34 @@ router.post('/login', async (req, res) => {
         return;
       }
 
+      req.session.save(() => {
+        req.session.user_id = userData.id;
+        req.session.logged_in = true;
+
+        res.json({ user: userData, message: "You are now logged in."});
+      })
+
     } catch (err) {
       console.log(err);
       res.status(500).json(err);
     }
+});
+
+router.post('/logout', (req, res) => {
+  try {
+    // When the user logs out, destroy the session
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        document.location.replace("/");
+      });
+    } else {
+      res.status(404).end();
+    }
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

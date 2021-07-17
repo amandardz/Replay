@@ -1,37 +1,37 @@
-import React from 'react';
-import auth from '../../utils/auth';
+import React, { useContext } from 'react';
+import { useHistory } from 'react-router-dom';
+import AuthContext from '../../contexts/AuthContext';
 
-const loginFormHandler = async (e, props) => {
-  e.preventDefault();
+function Login() {
 
-  // Collect values from the login form
-  const username = document.querySelector('#username-login').value.trim();
-  const password = document.querySelector('#password-login').value.trim();
+  const { setLoggedIn } = useContext(AuthContext);
+  const history = useHistory();
 
-  console.log(document.querySelector('#username-login').value);
-
-  if (username && password) {
-    // Send a POST request to the API endpoint
-    const response = await fetch('/api/users/login', {
-      method: 'POST',
-      body: JSON.stringify({ username, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if(response.ok) {
-      auth.login(() => {
-        // If successful, redirect the browser to the dashboard page
-        
-        props.history.push("/dashboard");
+  const loginFormHandler = async (e) => {
+    e.preventDefault();
+  
+    // Collect values from the login form
+    const username = document.querySelector('#username-login').value.trim();
+    const password = document.querySelector('#password-login').value.trim();
+  
+    if (username && password) {
+      // Send a POST request to the API endpoint
+      const response = await fetch('/api/user/login', {
+        method: 'POST',
+        body: JSON.stringify({ username, password }),
+        headers: { 'Content-Type': 'application/json' },
       });
-    };
+  
+      if(response.ok) {
+        setLoggedIn(true);
+        history.replace('/dashboard');
+      };
+  
+    } else {
+      alert("Please enter username and password.")
+    }
+  };
 
-  } else {
-    alert("Please enter username and password.")
-  }
-};
-
-function Login(props) {
   return (
     <form id='login-form' onSubmit={(e) => loginFormHandler(e)}>
       <h2 className='text-center'>Login</h2>
@@ -44,7 +44,7 @@ function Login(props) {
         <input type='password' className='form-control' id='password-login'></input>
       </div>
       <div className='d-flex justify-content-center'>
-        <button type="submit" className="btn btn-primary" onClick={() => {document.location.replace("/dashboard")}}>Login</button>
+        <button type="submit" className="btn btn-primary">Login</button>
       </div>
     </form>
   )
