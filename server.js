@@ -8,11 +8,15 @@ const routes = require('./routes')
 
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/replay", {
+  useNewUrlParser: true,
   useUnifiedTopology: true
 });
 
 const options = {
-  mongoUrl: process.env.MONGODB_URI || "mongodb://localhost/replay"
+  mongoUrl: process.env.MONGODB_URI || "mongodb://localhost/replay",
+  cookie: { 
+    maxAge: 86400000 // 24 hrs
+  }
 };
 
 app.use(session({

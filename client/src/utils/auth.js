@@ -1,21 +1,9 @@
-class Auth {
-  constructor() {
-    this.authenticated = false;
+function withAuth(req, res) {
+  if (req.session.logged_in) {
+    return true;
+  } else {
+    return false;
   }
+};
 
-  login(cb) {
-    this.authenticated = true;
-    cb();
-  }
-
-  logout(cb) {
-    this.authenticated = false;
-    cb();
-  }
-
-  isAuthenticated() {
-    return this.authenticated;
-  }
-}
-
-export default new Auth();
+export default withAuth;
