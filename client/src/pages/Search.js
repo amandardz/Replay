@@ -5,15 +5,18 @@ import {
 } from 'react';
 import API from '../utils/API'
 import axios from 'axios';
-import SearchBar from '../components/SearchBar'
+import SearchBar from '../components/SearchBar';
 import Navbar from '../components/Navbar';
+import Container from '../components/Container/idex';
+import searchResultsCard from '../components/SearchResultCard';
+import { set } from 'mongoose';
 
 function Search() {
 
     const [token, setToken] = useState('');
     const [search, setSearch] = useState('');
     const [isSubmitted, setIsSubmitted] = useState(false);
-    const [results, setResults] = useState('');
+    const [results, setResults] = useState([]);
     console.log(results)
 
     useEffect(() => {
@@ -41,7 +44,7 @@ function Search() {
                     }
                     setSearch('')
                     setIsSubmitted(false)
-                    setResults(res.data)
+                    setResults(res.data.tracks.items)
                 })
                 .catch(err => console.error(err))
         }
@@ -56,18 +59,32 @@ function Search() {
         setIsSubmitted(true)
     };
 
+
     return ( 
         <>
             <div className = 'dashNav' >
-            < Navbar />
+                < Navbar />
             </div> 
             <div className = 'mainContainer' >
             <div className = 'searchContainer' >
-            <SearchBar handleInputChange = {handleInputChange}
-            search = {search}
-            handleFormSubmit = {handleFormSubmit}
-            /> 
+                <SearchBar handleInputChange = {handleInputChange}
+                search = {search}
+                handleFormSubmit = {handleFormSubmit}
+                /> 
             </div> 
+            <div>
+                <Container>
+                    {results.map((track, i) =>
+
+                     <div
+                     key={i}>{track.name}</div>
+                    )}
+                
+                </Container>
+
+
+               
+            </div>
             </div> 
         </>
     )
