@@ -5,11 +5,11 @@ import AuthContext from '../../contexts/AuthContext';
 function Login() {
 
   const { setLoggedIn } = useContext(AuthContext);
+  const history = useHistory();
   const [formObject, setFormObject] = useState({
     username: "",
     password: ""
   });
-  const history = useHistory();
 
   function handleInputChange(event) {
     // add code to control the components here
