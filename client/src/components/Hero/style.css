@@ -1,0 +1,35 @@
+#hero {
+  background-image: url('/images/background.jpg');
+  background-size: cover;
+  background-position: bottom;
+  height: 70vh;
+  color: #fff;
+}
+
+#slogan {
+  text-transform: uppercase;
+}
+
+.btn-outline-primary {
+  color: #fff;
+  border: 2px solid #2b7f85
+}
+
+.btn-outline-primary:hover {
+  background-color: #2b7f85;
+  border-color: #2b7f85;
+}
+
+@media only screen and (min-width: 768px) {
+  #heroImg {
+    width: 530px;
+    height: 430px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #heroImg {
+    width: 430px;
+    height: 330px;
+  }
+}
