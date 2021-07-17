@@ -7,8 +7,8 @@ import API from '../utils/API'
 import axios from 'axios';
 import SearchBar from '../components/SearchBar';
 import Navbar from '../components/Navbar';
-import Container from '../components/Container/idex';
-import searchResultsCard from '../components/SearchResultCard';
+import Container from '../components/Container';
+import SearchResultsCard from '../components/SearchResultCard';
 import { set } from 'mongoose';
 
 function Search() {
@@ -74,10 +74,12 @@ function Search() {
             </div> 
             <div>
                 <Container>
-                    {results.map((track, i) =>
-
-                     <div
-                     key={i}>{track.name}</div>
+                    {results.map(result =>
+                    <SearchResultsCard 
+                        key={result.id}
+                        title={result.name}
+                        artists={result.artists}
+                        link={result.href}/>
                     )}
                 
                 </Container>
