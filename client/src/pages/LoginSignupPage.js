@@ -1,9 +1,9 @@
 import React from 'react';
-import LoginForm from './LoginForm';
-import SignupForm from './SignupForm';
+import LoginForm from '../components/LoginSignupForm/LoginForm';
+import SignupForm from '../components/LoginSignupForm/SignupForm';
 import './styles.css'
 
-function LoginSignupFunction() {
+function LoginSignupPage() {
   return (
     <div id='credentialContainer'>
       <div id='signupForm' className='credentialForms'>
@@ -17,4 +17,4 @@ function LoginSignupFunction() {
   )
 }
 
-export default LoginSignupFunction
+export default LoginSignupPage
