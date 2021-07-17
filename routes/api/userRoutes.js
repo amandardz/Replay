@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { User } = require('../../models');
-const bcrypt = require("bcryptjs");
+const bcrypt = require('bcryptjs');
 
 router.post('/', async (req, res) => {
   try {
@@ -55,21 +55,24 @@ router.post('/login', async (req, res) => {
     }
 });
 
-router.post('/logout', (req, res) => {
-  try {
-    // When the user logs out, destroy the session
-    if (req.session.logged_in) {
-      req.session.destroy(() => {
-        document.location.replace("/");
-      });
-    } else {
-      res.status(404).end();
-    }
+// router.post('/logout', (req, res) => {
 
-  } catch (err) {
-    console.log(err);
-    res.status(500).json(err);
-  }
-});
+//   const history = useHistory();
+
+//   try {
+//     // When the user logs out, destroy the session
+//     if (req.session.logged_in) {
+//       req.session.destroy(() => {
+//         document.location.replace("/");
+//       });
+//     } else {
+//       res.status(404).end();
+//     }
+
+//   } catch (err) {
+//     console.log(err);
+//     res.status(500).json(err);
+//   }
+// });
 
 module.exports = router;
