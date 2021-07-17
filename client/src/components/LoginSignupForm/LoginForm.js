@@ -36,7 +36,9 @@ function Login() {
       if(response.ok) {
         setLoggedIn(true);
         history.replace('/dashboard');
-      };
+      } else {
+        alert("Sorry, username or password are incorrect.")
+      }
   
     } else {
       alert("Please enter username and password.")
