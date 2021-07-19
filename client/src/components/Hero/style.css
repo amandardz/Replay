@@ -1,0 +1,73 @@
+.heroBackground {
+  background-image: url('/images/background.jpg');
+  background-size: cover;
+  background-position: bottom;
+  background-attachment: fixed;
+  width: 100vw;
+}
+
+#hero {
+  color: #fff;
+  height: 90vh;
+}
+
+#slogan {
+  text-transform: uppercase;
+  margin-top: 5px;
+  width: 80%;
+}
+
+#hero .btn {
+  margin-bottom: 20px;
+}
+
+#hero .btn:hover {
+  transition: 0.3s ease;
+  transform: scale(1.2);
+}
+
+#hero .btn-outline-primary {
+  color: #fff;
+  border: 2px solid #2b7f85
+}
+
+#hero .btn-outline-primary:hover {
+  background-color: #2b7f85;
+  border-color: #2b7f85;
+}
+
+.downBtn {
+  width: 100%;
+  height: 0;
+}
+
+.downBtn a {
+  background: transparent;
+  position: absolute;
+  left: 0;
+  margin-left: 50%;
+  transform: translate3d(-50%, 0, 0);
+}
+
+.downBtn i {
+  font-size: 50px;
+}
+
+@media only screen and (min-width: 768px) {
+  #hero img {
+    width: 70%;
+  }
+
+  #slogan {
+    width: 67%;
+  }
+
+  #hero .btn {
+    font-size: 25px;
+  }
+
+  #hero .btn-outline-primary {
+    border-width: 4px;
+    border-radius: 7px;
+  }
+} 
