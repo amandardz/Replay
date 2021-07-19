@@ -55,24 +55,4 @@ router.post('/login', async (req, res) => {
     }
 });
 
-// router.post('/logout', (req, res) => {
-
-//   const history = useHistory();
-
-//   try {
-//     // When the user logs out, destroy the session
-//     if (req.session.logged_in) {
-//       req.session.destroy(() => {
-//         document.location.replace("/");
-//       });
-//     } else {
-//       res.status(404).end();
-//     }
-
-//   } catch (err) {
-//     console.log(err);
-//     res.status(500).json(err);
-//   }
-// });
-
 module.exports = router;
