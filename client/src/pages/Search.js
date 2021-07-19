@@ -9,7 +9,6 @@ import SearchBar from '../components/SearchBar';
 import Navbar from '../components/Navbar';
 import Container from '../components/Container';
 import SearchResultsCard from '../components/SearchResultCard';
-import { set } from 'mongoose';
 
 function Search() {
 
@@ -66,27 +65,25 @@ function Search() {
                 < Navbar />
             </div> 
             <div className = 'mainContainer' >
-            <div className = 'searchContainer' >
-                <SearchBar handleInputChange = {handleInputChange}
-                search = {search}
-                handleFormSubmit = {handleFormSubmit}
-                /> 
-            </div> 
-            <div>
-                <Container>
-                    {results.map(result =>
-                    <SearchResultsCard 
-                        key={result.id}
-                        title={result.name}
-                        artists={result.artists}
-                        link={result.href}/>
-                    )}
-                
-                </Container>
-
-
-               
-            </div>
+                <div className = 'searchContainer' >
+                    <SearchBar handleInputChange = {handleInputChange}
+                    search = {search}
+                    handleFormSubmit = {handleFormSubmit}
+                    /> 
+                </div> 
+                <div className="song-container justify-content-center d-flex">
+                    <Container>
+                        {results.length > 0 ? 
+                        results.map(result =>
+                        <SearchResultsCard 
+                            key={result.id}
+                            title={result.name}
+                            artists={result.artists}
+                            link={result.href}/>
+                        ) : <h3>Search for songs!</h3>}
+                    
+                    </Container>
+                </div>
             </div> 
         </>
     )
