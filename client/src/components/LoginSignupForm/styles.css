@@ -1,6 +1,6 @@
-
-
-@media only screen and (min-width: 768px) {
+  #login-form, #signup-form {
+    color: #fff;
+  } 
 
   .nameContainer {
     width: 100%;
@@ -9,4 +9,3 @@
   .nameInputContainer {
     width: 50%;
   }
-}
