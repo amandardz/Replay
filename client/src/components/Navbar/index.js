@@ -41,7 +41,7 @@ function Navbar() {
         </Link>
       </ul>
       <div id='logout-icon' className='border-top'>
-        <button className='nav-link py-3 border-bottom' title='Logout' data-bs-toggle='tooltip' data-bs-placement='right' onClick={() => {logout()}}>
+        <button className='nav-link' title='Logout' data-bs-toggle='tooltip' data-bs-placement='right' onClick={() => {logout()}}>
           <i className='bi bi-door-open'><span>Logout</span></i>
         </button>
       </div>

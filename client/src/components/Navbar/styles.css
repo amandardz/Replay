@@ -5,6 +5,11 @@ nav {
   position: fixed;
 }
 
+.nav-link {
+  border-width: 0;
+  background-color: transparent;
+}
+
 i {
   font-size: 20px;
 }
