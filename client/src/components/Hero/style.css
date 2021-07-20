@@ -11,6 +11,10 @@
   height: 90vh;
 }
 
+#hero img {
+  width: 95%;
+}
+
 #slogan {
   text-transform: uppercase;
   margin-top: 5px;
@@ -60,6 +64,7 @@
 
   #slogan {
     width: 67%;
+    font-size: 25px;
   }
 
   #hero .btn {
@@ -71,3 +76,13 @@
     border-radius: 7px;
   }
 } 
+
+@media only screen and (min-width: 992px) {
+  #hero img {
+    width: 80%;
+  }
+
+  #slogan, #hero .btn {
+    font-size: 28px;
+  }
+}

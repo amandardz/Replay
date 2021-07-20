@@ -9,6 +9,7 @@ import SearchBar from '../components/SearchBar';
 import Navbar from '../components/Navbar';
 import Container from '../components/Container';
 import SearchResultsCard from '../components/SearchResultCard';
+import Wrapper from '../components/Wrapper';
 
 function Search() {
 
@@ -17,6 +18,7 @@ function Search() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [results, setResults] = useState([]);
     console.log(results)
+    const [navbarHeight, setNavbarHeight] = useState(document.body.clientHeight)
 
     useEffect(() => {
         API.getToken()
@@ -44,6 +46,7 @@ function Search() {
                     setSearch('')
                     setIsSubmitted(false)
                     setResults(res.data.tracks.items)
+                    setNavbarHeight(res.data.length)
                 })
                 .catch(err => console.error(err))
         }
@@ -61,16 +64,15 @@ function Search() {
 
     return ( 
         <>
-            <div className = 'dashNav' >
-                < Navbar />
-            </div> 
-            <div className = 'mainContainer' >
-                <div className = 'searchContainer' >
+        <Container className='d-flex flex-row'>
+            <Navbar navbarHeight={navbarHeight}/>
+            <Wrapper className='col-8 col-lg-10'>
+                <div className='d-flex justify-content-center'>
                     <SearchBar handleInputChange = {handleInputChange}
                     search = {search}
                     handleFormSubmit = {handleFormSubmit}
-                    /> 
-                </div> 
+                    />
+                </div>
                 <div className="song-container justify-content-center d-flex">
                     <Container>
                         {results.length > 0 ? 
@@ -84,7 +86,9 @@ function Search() {
                     
                     </Container>
                 </div>
-            </div> 
+
+            </Wrapper>
+        </Container>
         </>
     )
 }
