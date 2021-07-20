@@ -8,5 +8,8 @@ export default {
         'Content-Type': 'application/json',
       }
     });
+  },
+  getPlaylists: function() {
+    return axios.get('/api/playlist');
   }
 };
