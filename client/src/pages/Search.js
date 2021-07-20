@@ -10,6 +10,7 @@ import Navbar from '../components/Navbar';
 import Container from '../components/Container/idex';
 import searchResultsCard from '../components/SearchResultCard';
 import { set } from 'mongoose';
+import MusicPlayer from '../components/MusicPlayer';
 
 function Search() {
 
@@ -56,7 +57,8 @@ function Search() {
 
     const handleFormSubmit = event => {
         event.preventDefault();
-        setIsSubmitted(true)
+        // setIsSubmitted(true)
+        axios.get('/api/youtube', {params: {query: search }})
     };
 
 
@@ -81,8 +83,13 @@ function Search() {
                     )}
                 
                 </Container>
+                
+                <MusicPlayer />
+                {/* <iframe src="https://open.spotify.com/embed/track/37BZB0z9T8Xu7U3e65qxFy" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> */}
 
+                {/* <iframe id="sc-widget" src="https://w.soundcloud.com/player/?url=https://api.soundcloud.com/users/1539950/favorites" width="100%" height="465" scrolling="no" frameborder="no"></iframe> */}
 
+                {/* <iframe title="YouTube video player" class="youtube-player" type="text/html" width="560" height="345" src="http://www.youtube.com/embed/8v_4O44sfjM?autoplay=1&mute=1" frameborder="0" allowFullScreen></iframe> */}
                
             </div>
             </div> 
