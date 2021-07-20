@@ -6,6 +6,7 @@ import NavDashboard from "./components/NavDashboard";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Search from "./pages/Search";
 import AuthContext from "./contexts/AuthContext";
+import AddPlaylist from "./pages/AddPlaylist";
 
 function App() {
 
@@ -17,6 +18,7 @@ function App() {
         <Switch>
           <Route exact path={["/", "/home"]} component={Homepage} />
           <Route exact path="/login" component={LoginSignupPage} />
+          <ProtectedRoute exact path="/addplaylist" component={AddPlaylist} />
           <ProtectedRoute exact path="/dashboard" component={NavDashboard} />
           <ProtectedRoute exact path="/search" component={Search} />
           <Route path="*" component={() => "404 NOT FOUND"} />
