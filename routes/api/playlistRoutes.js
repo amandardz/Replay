@@ -1,17 +1,13 @@
 const router = require('express').Router();
 const { Playlist } = require('../../models');
 
-router.get('/', async (req, res) => {
-    try {
+router.get('/', (req, res) => {
 
-    const playlists = await Playlist.find(req.query).sort({ date: -1 });
-
-    res.status(200).json(playlists);
-  
-    } catch (err) {
-      console.log(err);
-      res.status(422).json(err);
-    }
+  Playlist
+    .find(req.query)
+    .sort({ date: -1 })
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
 });
 
 router.post('/', async (req, res) => {

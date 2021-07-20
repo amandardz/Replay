@@ -11,6 +11,10 @@ const playlistSchema = new Schema({
   },
   songs: {
     type: Array
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 
