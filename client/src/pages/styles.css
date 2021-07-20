@@ -5,13 +5,14 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-    background: url('/images/background.jpg');
+    background: #010015;
 }
 
 .credentialForms {
-    background: #010015;
+    background: #2d7e85;
     padding: 20px;
-    box-shadow: 3px 3px 8px #1d0117;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px #010015;
     width: 75%;
 }
 
