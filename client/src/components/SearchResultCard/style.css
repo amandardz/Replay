@@ -1,0 +1,12 @@
+.card-title {
+    font-weight: bold;
+}
+
+.card {
+    width: 60vw;
+    margin: 10px 0;
+}
+
+.add-btn button {
+    height: 50%;
+}

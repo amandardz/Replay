@@ -7,10 +7,12 @@ import API from '../utils/API'
 import axios from 'axios';
 import SearchBar from '../components/SearchBar';
 import Navbar from '../components/Navbar';
-import Container from '../components/Container/idex';
-import searchResultsCard from '../components/SearchResultCard';
+
 import { set } from 'mongoose';
 import MusicPlayer from '../components/MusicPlayer';
+import Container from '../components/Container';
+import SearchResultsCard from '../components/SearchResultCard';
+import Wrapper from '../components/Wrapper';
 
 function Search() {
 
@@ -19,6 +21,7 @@ function Search() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [results, setResults] = useState([]);
     console.log(results)
+    const [navbarHeight, setNavbarHeight] = useState(document.body.clientHeight)
 
     useEffect(() => {
         API.getToken()
@@ -46,6 +49,7 @@ function Search() {
                     setSearch('')
                     setIsSubmitted(false)
                     setResults(res.data.tracks.items)
+                    setNavbarHeight(res.data.length)
                 })
                 .catch(err => console.error(err))
         }
@@ -64,20 +68,33 @@ function Search() {
 
     return ( 
         <>
-            <div className = 'dashNav' >
-                < Navbar />
-            </div> 
-            <div className = 'mainContainer' >
-            <div className = 'searchContainer' >
-                <SearchBar handleInputChange = {handleInputChange}
-                search = {search}
-                handleFormSubmit = {handleFormSubmit}
-                /> 
-            </div> 
-            <div>
-                <Container>
-                    {results.map((track, i) =>
+        <Container className='d-flex flex-row'>
+            <Navbar navbarHeight={navbarHeight}/>
+            <Wrapper className='col-8 col-lg-10'>
+                <div className='d-flex justify-content-center'>
+                    <SearchBar handleInputChange = {handleInputChange}
+                    search = {search}
+                    handleFormSubmit = {handleFormSubmit}
+                    />
+                </div>
+                <div className="song-container justify-content-center d-flex">
+                    <Container>
+                        {results.length > 0 ? 
+                        results.map(result =>
+                        <SearchResultsCard 
+                            key={result.id}
+                            title={result.name}
+                            artists={result.artists}
+                            link={result.href}/>
+                        ) : <h3>Search for songs!</h3>}
+                    
+                    </Container>
+                </div>
 
+            </Wrapper>
+        </Container>
+
+        </>
                      <div
                      key={i}>{track.name}</div>
                     )}
@@ -93,7 +110,6 @@ function Search() {
                
             </div>
             </div> 
-        </>
     )
 }
 
