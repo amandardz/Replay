@@ -74,7 +74,7 @@ function Signup() {
         <input type='password' className='form-control' id='password-signup' onChange={handleInputChange} name="password"></input>
       </div>
       <div className='d-flex justify-content-center'>
-        <button type="submit" className="btn btn-primary">Signup</button>
+        <button type="submit" className="btn btn-warning">Signup</button>
       </div>
     </form>
   )

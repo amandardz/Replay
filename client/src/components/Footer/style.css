@@ -1,0 +1,77 @@
+.footerContainer {
+  background: url('/images/background.jpg');
+  background-size: cover;
+  background-attachment: fixed;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#aboutApp {
+  margin: 10px;
+}
+
+#aboutApp h2 {
+  color: #2d7e85;
+  font-weight: 900;
+}
+
+.creatorImg i {
+  font-size: 30px;
+}
+
+.creatorName {
+  color: #ac7c17;
+}
+
+.contact-icons {
+  color: #2d7e85;
+}
+
+@media only screen and (min-width: 768px) {
+  .footerContainer {
+    display: flex;
+    flex-direction: row;
+  }
+
+  #aboutApp {
+    width: 50%;
+    margin: 0;
+  }
+
+  #appName {
+    font-size: 40px;
+  }
+
+  #aboutApp p {
+    font-size: 25px;
+  }
+
+  .creatorImg i {
+    font-size: 45px;
+  }
+
+  .creatorName {
+    font-size: 25px;
+  }
+
+  .contact-icons {
+    font-size: 28px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #appName {
+    font-size: 40px;
+  }
+
+  #aboutApp p {
+    font-size: 25px;
+  }
+
+  .creatorName {
+    font-size: 28px;
+  }
+}

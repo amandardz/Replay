@@ -36,7 +36,9 @@ function Login() {
       if(response.ok) {
         setLoggedIn(true);
         history.replace('/dashboard');
-      };
+      } else {
+        alert("Sorry, username or password are incorrect.")
+      }
   
     } else {
       alert("Please enter username and password.")
@@ -67,7 +69,7 @@ function Login() {
           ></input>
       </div>
       <div className='d-flex justify-content-center'>
-        <button type="submit" className="btn btn-primary">Login</button>
+        <button type="submit" className="btn btn-warning">Login</button>
       </div>
     </form>
   )

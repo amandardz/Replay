@@ -1,7 +1,12 @@
-import React from 'react'
+import React from 'react';
 
 function Playlist() {
-    return <h1>Playlists</h1>
+
+    return (
+        <div>
+            <h1>Page to view songs on a playlist</h1>
+        </div>
+    )
 }
 
 export default Playlist;

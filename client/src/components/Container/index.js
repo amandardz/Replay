@@ -1,9 +1,10 @@
 import React from 'react';
-import './style.css';
 
 function Container (props) {
   return (
-    <div>{props.children}</div>
+    <div id='container' className={props.className}>
+      {props.children}
+    </div>
   )
 }
 
