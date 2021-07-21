@@ -42,6 +42,29 @@
     margin: 0 auto;
   }
 
+  #addPlaylistContainer {
+      height: 100%;
+      background: #e0173b;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+  }
+
+  #addPlaylistContent {
+      background: #f49f04;
+      padding: 35px;
+      border-radius: 10px;
+  }
+
+  #addPlaylistContent button {
+      background: #010015;
+      color: #ced7e0;
+      width: 80px;
+      padding: 4px;
+      border-radius: 4px;
+    }
+
   .playlists {
     padding: 0;
     margin: 0;
