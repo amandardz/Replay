@@ -55,12 +55,12 @@ function AddPlaylist() {
                 </div>
                 <div className="mb-3">
                     <label for="description" className="form-label">Description (optional)</label>
-                    <input
+                    <textarea
                         type="text"
                         className="form-control"
                         id="description"
                         name="description"
-                        onChange={handleInputChange} />
+                        onChange={handleInputChange}/>
                 </div>
                 <button>Submit</button>
             </div>

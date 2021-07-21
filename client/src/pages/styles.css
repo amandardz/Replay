@@ -55,14 +55,20 @@
       background: #f49f04;
       padding: 35px;
       border-radius: 10px;
+      width: 95%;
   }
 
-  #addPlaylistContent button {
+  #addPlaylistContent > div > label {
+      font-size: 22px;
+      font-weight: 700;
+  }
+
+  #addPlaylistContent > button {
       background: #010015;
       color: #ced7e0;
-      width: 80px;
-      padding: 4px;
-      border-radius: 4px;
+      font-size: 20px;
+      padding: 7px;
+      border-radius: 7px;
     }
 
   .playlists {
@@ -83,6 +89,10 @@
         padding: 20px;
         width: 40%;
     }
+    
+    #addPlaylistContent > div > textarea {
+        height: 100px;
+    }
 
     .playlists {
         width: 95%;
@@ -90,6 +100,11 @@
 }
 
 @media only screen and (min-width: 1200px) {
+    #addPlaylistContent {
+        width: 70%;
+    }
+
+
     .playlists {
         width: 93%;
     }
