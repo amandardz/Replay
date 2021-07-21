@@ -20,7 +20,6 @@ function Search() {
     const [isSubmitted, setIsSubmitted] = useState(false);
     const [results, setResults] = useState([]);
     console.log(results)
-    const [navbarHeight, setNavbarHeight] = useState(document.body.clientHeight)
 
     useEffect(() => {
         API.getToken()
@@ -48,7 +47,6 @@ function Search() {
                     setSearch('')
                     setIsSubmitted(false)
                     setResults(res.data.tracks.items)
-                    setNavbarHeight(res.data.length)
                 })
                 .catch(err => console.error(err))
         }
@@ -68,8 +66,8 @@ function Search() {
     return ( 
         <>
         <Container className='d-flex flex-row'>
-            <Navbar navbarHeight={navbarHeight}/>
-            <Wrapper className='col-8 col-lg-10'>
+            <Navbar />
+            <Wrapper>
                 <div className='d-flex justify-content-center'>
                     <SearchBar handleInputChange = {handleInputChange}
                     search = {search}

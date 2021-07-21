@@ -5,6 +5,6 @@
   font-family: sans-serif;
 }
 
-html, body, #container, #root, #wrapper {
+html, body, #container, #root {
   height: 100%!important;
 }
