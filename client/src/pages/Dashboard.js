@@ -12,7 +12,7 @@ function Dashboard() {
 
   const [playlists, setPlaylists] = useState([]);
   const history = useHistory();
-  const [navbarHeight, setNavbarHeight] = useState(document.body.clientHeight)
+ 
 
   useEffect(() => {
     loadPlaylists()
@@ -22,16 +22,15 @@ function Dashboard() {
 
     API.getPlaylists()
       .then(res => 
-        {setPlaylists(res.data)
-          setNavbarHeight(res.data)}
+        setPlaylists(res.data)
       )
       .catch(err => console.log(err));
   }
 
   return <>
-  <Container className='d-flex flex-row'>
-    <Navbar navbarHeight={navbarHeight}/>
-    <Wrapper className='dashBackground col-7 col-md-9'>
+  <Container>
+    <Navbar />
+    <Wrapper className='dashBackground'>
       <div className='d-flex justify-content-center'>
         <SearchBar />
       </div>

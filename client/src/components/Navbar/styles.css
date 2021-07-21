@@ -1,5 +1,8 @@
 nav {
   background: #010015;
+  position: fixed;
+  height: 100vh;
+  width: 35%;
 }
 
 .nav-link {
