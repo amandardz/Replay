@@ -81,8 +81,13 @@
 } 
 
 @media only screen and (min-width: 992px) {
-
   #slogan, #hero .btn {
     font-size: 28px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #hero > div {
+    height: 90vh;
   }
 }

@@ -6,19 +6,16 @@ function Footer() {
   const creators = [
     {
       name: 'Ashley Wright',
-      image: 'bi bi-person-circle',
-      github: '...',
-      linkedin: '...',
+      github: 'https://github.com/ashleyaggie',
+      linkedin: 'https://www.linkedin.com/in/ashley-wright-580471105/',
     },
     {
       name: 'Olivia Lopez',
-      image: 'bi bi-person-circle',
-      github: '...',
-      linkedin: '...',
+      github: 'https://github.com/DoubleLForce5',
+      linkedin: 'https://www.linkedin.com/in/olivialopez17/',
     },
     {
       name: 'Amanda Rodriguez',
-      image: 'bi bi-person-circle',
       github: 'https://github.com/amandardz',
       linkedin: 'https://www.linkedin.com/in/amandardz/',
     }
@@ -30,13 +27,10 @@ function Footer() {
         <p>Replay is a music application where music enthusiast can create playlist for every occasion.</p>
       </div>
       <div id='creators'>
-        {creators.map(({name, image, github, linkedin}) => {
+        {creators.map(({name, github, linkedin}) => {
           return(
-            <div id={name} className='d-flex flex-row my-3'>
-              <div className='creatorImg d-flex justify-content-center align-items-center'>
-                <i className={image}></i>
-              </div>
-              <div className='d-flex flex-column justify-content-center ms-2'>
+            <div key={name} className='d-flex flex-row'>
+              <div className='d-flex flex-column justify-content-center align-items-center'>
                 <span className='creatorName'>{name}</span>
                 <div className='d-flex flex-row'>
                   <a href={github}><i className='contact-icons bi bi-github me-2'></i>

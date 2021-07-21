@@ -4,13 +4,14 @@
   background-attachment: fixed;
   color: #fff;
   display: flex;
-  flex-direction: column;
-  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: center;
   align-items: center;
+  width: 100%;
 }
 
 #aboutApp {
-  margin: 10px;
+  width: 45%;
 }
 
 #aboutApp h2 {
@@ -18,39 +19,37 @@
   font-weight: 900;
 }
 
-.creatorImg i {
-  font-size: 30px;
+#creators {
+  width: 48%;
+}
+
+#creators > div {
+  margin: 5px;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 
 .creatorName {
-  color: #ac7c17;
+  color: #f8f9fa;
 }
 
 .contact-icons {
   color: #2d7e85;
+  font-size: 20px;
+}
+
+.contact-icons:hover {
+  color: #f8f9fa;
 }
 
 @media only screen and (min-width: 768px) {
-  .footerContainer {
-    display: flex;
-    flex-direction: row;
-  }
-
-  #aboutApp {
-    width: 50%;
-    margin: 0;
-  }
-
   #appName {
     font-size: 40px;
   }
 
   #aboutApp p {
     font-size: 25px;
-  }
-
-  .creatorImg i {
-    font-size: 45px;
   }
 
   .creatorName {
@@ -63,6 +62,19 @@
 }
 
 @media only screen and (min-width: 992px) {
+  .footerContainer {
+    justify-content: flex-end;
+  }
+
+  #aboutApp {
+    width: 50%;
+  }
+
+  #creators {
+    width: 45%;
+  }
+  
+
   #appName {
     font-size: 40px;
   }
@@ -73,5 +85,9 @@
 
   .creatorName {
     font-size: 28px;
+  }
+
+  .contact-icons {
+    font-size: 30px;
   }
 }
