@@ -12,8 +12,8 @@
 #homeCard {
   display: flex;
   align-items: center;
-  width: 300px;
-  height: 350px;
+  width: 250px;
+  height: 275px;
   padding: 20px;
   margin: 30px;
   background: #070720;

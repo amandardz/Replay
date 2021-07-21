@@ -6,6 +6,7 @@ import Wrapper from '../components/Wrapper'
 import SearchBar from '../components/SearchBar'
 import PlaylistCard from '../components/PlaylistCard';
 import API from '../utils/API';
+import './styles.css'
 
 function Dashboard() {
 
@@ -30,17 +31,17 @@ function Dashboard() {
   return <>
   <Container className='d-flex flex-row'>
     <Navbar navbarHeight={navbarHeight}/>
-    <Wrapper className='col-8 col-lg-10'>
+    <Wrapper className='dashBackground col-7 col-md-9'>
       <div className='d-flex justify-content-center'>
         <SearchBar />
       </div>
       <div>
-        <div className='d-flex flex-row justify-content-around'>
-          <h1>My Playlists</h1>
-          <button onClick={() => {history.replace('/addplaylist')}}>Add Playlist</button>
+        <div id='playlistHeader'>
+          <h1 id='playlistTitle'>My Playlists</h1>
+          <button id='playlistBtn' onClick={() => {history.replace('/addplaylist')}}>Add Playlist</button>
         </div>
         <div className='d-flex justify-content-center'>
-          <ul style={{paddingLeft: 0}}>
+          <ul className='playlists'>
             {playlists.length > 0 ? (
               playlists.map(playlist => {
                 return (

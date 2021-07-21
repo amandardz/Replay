@@ -20,6 +20,34 @@
     margin-top: 15px;
 }
 
+#playlistHeader {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin: 5px 5px 0px 5px;
+    padding: 20px;
+    background: cadetblue;
+    border-radius: 10px;
+  }
+  
+  #playlistTitle {
+    text-align: center;
+  }
+  
+  #playlistBtn {
+    background: #f49f04;
+    width: 130px;
+    border-radius: 4px;
+    padding: 4px;
+    margin: 0 auto;
+  }
+
+  .playlists {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+  }
+
 @media only screen and (min-width: 768px) {
     #credentialContainer {
         display: flex;
@@ -31,6 +59,16 @@
     .credentialForms {
         padding: 20px;
         width: 40%;
+    }
+
+    .playlists {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .playlists {
+        width: 93%;
     }
 }
 

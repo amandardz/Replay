@@ -7,7 +7,6 @@ import API from '../utils/API'
 import axios from 'axios';
 import SearchBar from '../components/SearchBar';
 import Navbar from '../components/Navbar';
-
 import { set } from 'mongoose';
 import MusicPlayer from '../components/MusicPlayer';
 import Container from '../components/Container';
@@ -61,7 +60,7 @@ function Search() {
 
     const handleFormSubmit = event => {
         event.preventDefault();
-        // setIsSubmitted(true)
+        setIsSubmitted(true)
         axios.get('/api/youtube', {params: {query: search }})
     };
 
