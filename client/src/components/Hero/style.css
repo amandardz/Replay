@@ -8,7 +8,14 @@
 
 #hero {
   color: #fff;
-  height: 90vh;
+}
+
+#hero > div {
+  height: 75vh;
+}
+
+#hero img {
+  width: 85%;
 }
 
 #slogan {
@@ -60,6 +67,7 @@
 
   #slogan {
     width: 67%;
+    font-size: 25px;
   }
 
   #hero .btn {
@@ -71,3 +79,15 @@
     border-radius: 7px;
   }
 } 
+
+@media only screen and (min-width: 992px) {
+  #slogan, #hero .btn {
+    font-size: 28px;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #hero > div {
+    height: 90vh;
+  }
+}

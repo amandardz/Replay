@@ -1,5 +1,4 @@
 import React from 'react';
-import Container from '../Container';
 import './style.css'
 
 function HomepageCards() {
@@ -25,7 +24,7 @@ function HomepageCards() {
   ]
 
   return (
-    <Container className='homepageCardsContainer'>
+    <div className='homepageCardsContainer'>
       <div className='homepageCards'>
         {homeCards.map(({key, icon, heading, details}) => {
           return (
@@ -41,7 +40,7 @@ function HomepageCards() {
           )
         })}
       </div>
-    </Container>
+    </div>
     )
 
 };
