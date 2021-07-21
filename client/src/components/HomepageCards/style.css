@@ -1,0 +1,86 @@
+.homepageCardsContainer {
+  background: #010015;
+}
+
+.homepageCards {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#homeCard {
+  display: flex;
+  align-items: center;
+  width: 250px;
+  height: 275px;
+  padding: 20px;
+  margin: 30px;
+  background: #070720;
+  color: #fff;
+  border-radius: 10px;
+  box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+}
+
+#homeCard i {
+  font-size: 80px;
+  color: #ab7b18;
+}
+
+#homeCard .card-title {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+#homeCard .card-text {
+  font-size: 16px;
+}
+
+@media only screen and (min-width: 768px) {
+  .homepageCardsContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+
+  .homepageCards {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+  }
+
+  #homeCard {
+    width: 375px;
+    height: 425px;
+    margin: 50px;
+  }
+
+  #homeCard i {
+    font-size: 90px;
+  }
+
+  #homeCard .card-title {
+    font-size: 25px;
+  }
+  
+  #homeCard .card-text {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  #homeCard i {
+    font-size: 100px;
+  }
+
+  #homeCard .card-title {
+    font-size: 30px;
+  }
+  
+  #homeCard .card-text {
+    font-size: 25px;
+  }
+}

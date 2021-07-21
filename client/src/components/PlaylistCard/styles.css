@@ -1,0 +1,15 @@
+.playlistCard {
+    background: #e0173b;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #010015;
+}
+
+.playlistCard:hover {
+    transform: scale(1.1)
+}
+
+.clickable {
+    cursor: pointer;
+    text-decoration: underline;
+}
