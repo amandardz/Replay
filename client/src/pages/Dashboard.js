@@ -41,11 +41,11 @@ function Dashboard() {
           <button id='playlistBtn' onClick={() => {history.replace('/addplaylist')}}>Add Playlist</button>
         </div>
         <div className='d-flex justify-content-center'>
-          <ul className='playlists'>
+          <ul className='playlists row row-cols-md-2 row-cols-lg-3 g-1'>
             {playlists.length > 0 ? (
               playlists.map(playlist => {
                 return (
-                  <li key={playlist._id} style={{listStyleType: 'none'}}>
+                  <li key={playlist._id}>
                     <PlaylistCard
                       id={playlist._id}
                       title={playlist.name}
