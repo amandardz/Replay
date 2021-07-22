@@ -1,10 +1,14 @@
 import React from 'react';
 
-function Playlist() {
+function Playlist(props) {
 
     return (
         <div>
-            <h1>Page to view songs on a playlist</h1>
+            <h3>{props.title}</h3>
+            <p>{props.description}</p>
+            <ul>
+                - list of videos -
+            </ul>
         </div>
     )
 }

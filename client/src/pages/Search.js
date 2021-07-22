@@ -107,7 +107,7 @@ function Search() {
                     handleFormSubmit = {handleFormSubmit}
                     />
                 </div>
-                <div className="song-container justify-content-center d-flex">
+                <div className="video-container justify-content-center d-flex">
                     <Container>
                         {/* {results.length > 0 ? 
                         results.map(result =>
@@ -116,7 +116,7 @@ function Search() {
                             title={result.name}
                             artists={result.artists}
                             link={result.href}/>
-                        ) : <h3>Search for songs!</h3>} */}
+                        ) : <h3>Search for videos!</h3>} */}
                     
                     </Container>
                 </div>
@@ -131,19 +131,19 @@ function Search() {
 }
 
   {/* <div
-                     key={i}>{track.name}</div>
-                    )} */}
-                
-                {/* </Container> */}
-             
-             
-                {/* <iframe src="https://open.spotify.com/embed/track/37BZB0z9T8Xu7U3e65qxFy" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe> */}
+            key={i}>{track.name}</div>
+        )}}
+    
+    {</Container>}
+        
+        
+        {<iframe src="https://open.spotify.com/embed/track/37BZB0z9T8Xu7U3e65qxFy" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>}
 
-                {/* <iframe id="sc-widget" src="https://w.soundcloud.com/player/?url=https://api.soundcloud.com/users/1539950/favorites" width="100%" height="465" scrolling="no" frameborder="no"></iframe> */}
+        {<iframe id="sc-widget" src="https://w.soundcloud.com/player/?url=https://api.soundcloud.com/users/1539950/favorites" width="100%" height="465" scrolling="no" frameborder="no"></iframe>}
 
-                {/* <iframe title="YouTube video player" class="youtube-player" type="text/html" width="560" height="345" src="http://www.youtube.com/embed/8v_4O44sfjM?autoplay=1&mute=1" frameborder="0" allowFullScreen></iframe> */}
-               
-            // </div>
-            // </div> 
+        {<iframe title="YouTube video player" class="youtube-player" type="text/html" width="560" height="345" src="http://www.youtube.com/embed/8v_4O44sfjM?autoplay=1&mute=1" frameborder="0" allowFullScreen></iframe> 
+        
+    </div>
+    </div> */}
 
 export default Search;
