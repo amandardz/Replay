@@ -11,8 +11,8 @@ class MusicPlayer extends React.Component {
         mute: 1
       },
     };
-
-    return <YouTube videoId="7EUVJaKJtBY" opts={opts} onReady={this._onReady} />;
+    console.log(this.props.videoLinks)
+    return <YouTube videoId={this.props.videoLinks} opts={opts} onReady={this._onReady} />;
   }
 
   _onReady(event) {
