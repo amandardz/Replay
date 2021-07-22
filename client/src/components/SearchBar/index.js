@@ -12,9 +12,9 @@ function SearchBar(props) {
                 name='search'
                 value={search}
                 className='form-control border border-dark' 
-                placeholder='Search for a song' 
+                placeholder='Search for a video' 
                 onChange={handleInputChange}
-                aria-label='Song Search' 
+                aria-label='Video Search' 
                 aria-describedby='button' />
                 <button className='btn btn-outline-dark' type='submit' id='search-button'>
                     <i className="bi bi-search"></i>
