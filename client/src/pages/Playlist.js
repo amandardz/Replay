@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import API from '../utils/API';
+import MusicPlayer from '../components/MusicPlayer';
 
 const Playlist = (props) => {
 
@@ -7,25 +8,37 @@ const Playlist = (props) => {
 
     useEffect(() => {
         loadPlaylist()
-    }, []);
+    });
+
+    const videoLinks = []
 
     function loadPlaylist() {
+        console.log('playlistId', props.match.params.playlistId)
         API.getPlaylist(props.match.params.playlistId)
-            .then(res => setPlaylist(res.data))
+            .then(res => {setPlaylist(res.data);
+            videoLinks = playlist.Playlist.videos.map(video => {
+                console.log('videoLinkID', video.linkId)
+                return video.linkId
+        })})
             .catch(err => console.log(err));
     }
 
+
     const isLoading = playlist && playlist.Playlist ? true : false;
+
+
 
     return (
         <>
             {!isLoading && <div>loading...</div>}
-            {isLoading && <div>
+            {isLoading && <div><MusicPlayer videoLinks={videoLinks}/><div>
                 <h3>{playlist.Playlist.name}</h3>
                 <p>{playlist.Playlist.description}</p>
                 <ul>
                     - list of videos -
+
                 </ul>
+            </div>
             </div>}
         </>
     )

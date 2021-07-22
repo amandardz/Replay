@@ -79,7 +79,6 @@ function Search() {
               )}
             </Container>
           </div>
-          {/* <MusicPlayer /> */}
         </Wrapper>
       </Container>
     </>
