@@ -1,4 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import Container from '../components/Container'
+import Navbar from '../components/Navbar'
+import Wrapper from '../components/Wrapper'
 import API from '../utils/API';
 import MusicPlayer from '../components/MusicPlayer';
 
@@ -30,16 +33,21 @@ const Playlist = (props) => {
 
     return (
         <>
-            {!isLoading && <div>loading...</div>}
-            {isLoading && <div><MusicPlayer videoLinks={videoLinks}/><div>
-                <h3>{playlist.Playlist.name}</h3>
-                <p>{playlist.Playlist.description}</p>
-                <ul>
-                    - list of videos -
+        <Container>
+            <Navbar />
+            <Wrapper>
+                {!isLoading && <div>loading...</div>}
+                {isLoading && <div><MusicPlayer videoLinks={videoLinks}/><div>
+                    <h3>{playlist.Playlist.name}</h3>
+                    <p>{playlist.Playlist.description}</p>
+                    <ul>
+                        - list of videos -
 
-                </ul>
-            </div>
-            </div>}
+                    </ul>
+                </div>
+                </div>}
+            </Wrapper>
+        </Container>
         </>
     )
 }
