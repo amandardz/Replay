@@ -16,8 +16,12 @@
     width: 75%;
 }
 
+.background {
+    background: #ced7e0;
+  }
+
 .playlistHeaderContainer {
-    padding: 5px;
+    padding: 5px 10px;
 }
 
 .video-container {
@@ -26,11 +30,12 @@
 
 #playlistHeader {
     background: #2b7f85;
+    color: #010015;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px;
+    padding: 15px;
 }
   
 #playlistTitle {
@@ -38,11 +43,12 @@ text-align: center;
 }
   
 #playlistBtn {
-background: #f49f04;
-width: 130px;
-border-radius: 4px;
-padding: 4px;
-margin: auto;
+    background: #f49f04;
+    color: #010015;
+    width: 130px;
+    border-radius: 5px;
+    padding: 4px;
+    margin: auto;
 }
 
 #addPlaylistContainer {
@@ -75,8 +81,10 @@ margin: auto;
 }
 
 .playlists {
-padding: 0;
-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(225px, 1fr));
+    gap: 15px;
+    padding: 5px 0px;
 }
 
 .playlists > li {
@@ -101,7 +109,15 @@ width: 100%;
     }
 
     .playlists {
-        width: 95%;
+        gap: 15px;
+        padding: 10px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .playlists {
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap :18px
     }
 }
 
@@ -110,9 +126,9 @@ width: 100%;
         width: 70%;
     }
 
-
     .playlists {
-        width: 93%;
+        grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+        gap: 20px;
     }
 }
 
