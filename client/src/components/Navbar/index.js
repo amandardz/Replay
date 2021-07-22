@@ -18,11 +18,8 @@ function Navbar(props) {
     }
   };
 
-  const heightPercent = props.navbarHeight + '%';
-  const navStyle = {height: heightPercent};
-
   return (
-    <nav className='d-flex flex-column col-4 col-lg-2' style={navStyle}>
+    <nav className='d-flex flex-column'>
       <a href='/dashboard' id='logo-icon' className='link-dark text-decoration-none' title='Logo' data-bs-toggle='tooltip' data-bs-placement='right'>
         <img src='/images/replay-logo.png' alt='Replay Logo'/>
       </a>

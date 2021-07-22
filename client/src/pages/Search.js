@@ -7,7 +7,6 @@ import API from '../utils/API'
 import axios from 'axios';
 import SearchBar from '../components/SearchBar';
 import Navbar from '../components/Navbar';
-
 import { set } from 'mongoose';
 import MusicPlayer from '../components/MusicPlayer';
 import Container from '../components/Container';
@@ -80,6 +79,7 @@ function Search() {
     //     }
     // }, [search, isSubmitted]);
 
+
     const handleInputChange = event => {
         setSearch(event.target.value);
         console.log(search)
@@ -87,7 +87,7 @@ function Search() {
 
     const handleFormSubmit = event => {
         event.preventDefault();
-        // setIsSubmitted(true)
+        setIsSubmitted(true)
         axios.get('/api/youtube', {params: {query: search }})
         .then(data => {
             setResults(data.data.data.items)
@@ -99,8 +99,8 @@ function Search() {
     return ( 
         <>
         <Container className='d-flex flex-row'>
-            <Navbar navbarHeight={navbarHeight}/>
-            <Wrapper className='col-8 col-lg-10'>
+            <Navbar />
+            <Wrapper>
                 <div className='d-flex justify-content-center'>
                     <SearchBar handleInputChange = {handleInputChange}
                     search = {search}

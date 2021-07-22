@@ -41,27 +41,29 @@ function AddPlaylist() {
     }
 
     return(
-        <form onSubmit={(e) => {playlistFormHandler(e)}}>
-            <h1>Add playlist page</h1>
-            <div className="mb-3">
-                <label for="playlist-title" className="form-label">Playlist Title</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="playlist-title"
-                    name="name"
-                    onChange={handleInputChange} />
+        <form id='addPlaylistContainer' onSubmit={(e) => {playlistFormHandler(e)}}>
+            <div id='addPlaylistContent'>
+                <h1>Add playlist page</h1>
+                <div className="mb-3">
+                    <label for="playlist-title" className="form-label">Playlist Title</label>
+                    <input
+                        type="text"
+                        className="form-control"
+                        id="playlist-title"
+                        name="name"
+                        onChange={handleInputChange} />
+                </div>
+                <div className="mb-3">
+                    <label for="description" className="form-label">Description (optional)</label>
+                    <textarea
+                        type="text"
+                        className="form-control"
+                        id="description"
+                        name="description"
+                        onChange={handleInputChange}/>
+                </div>
+                <button>Submit</button>
             </div>
-            <div className="mb-3">
-                <label for="description" className="form-label">Description (optional)</label>
-                <input
-                    type="text"
-                    className="form-control"
-                    id="description"
-                    name="description"
-                    onChange={handleInputChange} />
-            </div>
-            <button>Submit</button>
         </form>
     )
 }

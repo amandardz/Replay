@@ -6,12 +6,13 @@ import Wrapper from '../components/Wrapper'
 import SearchBar from '../components/SearchBar'
 import PlaylistCard from '../components/PlaylistCard';
 import API from '../utils/API';
+import './styles.css'
 
 function Dashboard() {
 
   const [playlists, setPlaylists] = useState([]);
   const history = useHistory();
-  const [navbarHeight, setNavbarHeight] = useState(document.body.clientHeight)
+ 
 
   useEffect(() => {
     loadPlaylists()
@@ -21,30 +22,29 @@ function Dashboard() {
 
     API.getPlaylists()
       .then(res => 
-        {setPlaylists(res.data)
-          setNavbarHeight(res.data)}
+        setPlaylists(res.data)
       )
       .catch(err => console.log(err));
   }
 
   return <>
-  <Container className='d-flex flex-row'>
-    <Navbar navbarHeight={navbarHeight}/>
-    <Wrapper className='col-8 col-lg-10'>
+  <Container>
+    <Navbar />
+    <Wrapper className='dashBackground'>
       <div className='d-flex justify-content-center'>
         <SearchBar />
       </div>
       <div>
-        <div className='d-flex flex-row justify-content-around'>
-          <h1>My Playlists</h1>
-          <button onClick={() => {history.replace('/addplaylist')}}>Add Playlist</button>
+        <div id='playlistHeader'>
+          <h1 id='playlistTitle'>My Playlists</h1>
+          <button id='playlistBtn' onClick={() => {history.replace('/addplaylist')}}>Add Playlist</button>
         </div>
         <div className='d-flex justify-content-center'>
-          <ul style={{paddingLeft: 0}}>
+          <ul className='playlists row row-cols-md-2 row-cols-lg-3 g-1'>
             {playlists.length > 0 ? (
               playlists.map(playlist => {
                 return (
-                  <li key={playlist._id} style={{listStyleType: 'none'}}>
+                  <li key={playlist._id}>
                     <PlaylistCard
                       id={playlist._id}
                       title={playlist.name}
