@@ -7,7 +7,6 @@ const playlistRoutes = require('./playlistRoutes');
 
 router.use('/user', userRoutes);
 router.use('/playlist', playlistRoutes);
-router.use('/user/token', tokenRoute);
 router.use('/youtube', youtubeRoute);
 
 module.exports = router;
