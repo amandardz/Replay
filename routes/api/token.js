@@ -4,8 +4,6 @@ require('dotenv').config();
 const qs = require('qs');
 
 router.get('/', async (req, res) => {
-    console.log('HERE!!!', process.env.SPOTIFY_CLIENT_ID)
-
     const clientId = process.env.SPOTIFY_CLIENT_ID;
     const clientSecret = process.env.SPOTIFY_CLIENT_SECRET;
 

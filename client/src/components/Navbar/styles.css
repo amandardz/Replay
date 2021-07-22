@@ -1,7 +1,7 @@
 nav {
   background: #010015;
   position: fixed;
-  height: 100vh;
+  min-height: 100%;
   width: 35%;
 }
 
@@ -28,8 +28,8 @@ nav a {
 }
 
 nav img {
-  width: 75%;
-  margin-top: 10px;
+  width: 90%;
+  margin-top: 5px;
 }
 
 #logout-icon {
@@ -39,9 +39,12 @@ nav img {
 }
 
 @media only screen and (min-width: 768px) {
+  nav {
+    width: 25%;
+  }
+
   nav img {
-    width: 90%;
-    margin: 10px;
+    width: 85%;
   }
 
   nav i {
@@ -62,12 +65,20 @@ nav img {
 }
 
 @media only screen and (min-width: 992px) {
+  nav {
+    width: 20%;
+  }
+
   nav img {
     width: 80%;
   }
 }
 
 @media only screen and (min-width: 1200px) {
+  nav {
+    width: 18%;
+  }
+
   nav img {
     width: 75%;
   }

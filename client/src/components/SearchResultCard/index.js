@@ -5,13 +5,13 @@ import he from "he";
 
 function searchResultsCard(props) {
   return (
-    <div className="card justify-content-center">
-      <div className="card-body row">
-        <div className="col">
+    <div className="card">
+      <div className="searchResultsContent card-body">
+        <div className="searchDescription">
           <p className="card-title">{he.decode(props.title)}</p>
           <p>{he.decode(props.description)}</p>
         </div>
-        <div className="col add-btn d-flex flex-row-reverse align-items-center">
+        <div className='dropdownContainer'>
           <form>
             <PlayListDropdown />
           </form>
