@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import API from '../../utils/API';
-
+import './style.css'
 function PlayListDropdown() {
 
     const [playlists, setPlaylists] = useState([]);
@@ -16,9 +16,9 @@ function PlayListDropdown() {
     }
 
     return (
-    <form>
-        <div class="form-group">
-            <select class="form-control" id="selectPlaylist">
+    <form className='playlistSelectionContainer'>
+        <div className="playlistSelection form-group">
+            <select className="form-control" id="selectPlaylist">
             <option className="disabled">Select &#x276F;</option>
             <option>Add New Playlist</option>
             {playlists.length > 0 &&
@@ -27,8 +27,8 @@ function PlayListDropdown() {
                 })
             }
             </select>
+            <button class='btn btn-outline-dark'>Add to Playlist</button>
         </div>
-        <button>Add to Playlist</button>
     </form>
     )
 }

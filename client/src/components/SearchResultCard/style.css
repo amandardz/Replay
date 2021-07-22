@@ -7,6 +7,57 @@
     margin: 10px 0;
 }
 
-.add-btn button {
-    height: 50%;
+.card:hover {
+    transform: scale(1.05)
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.searchResultsContent {
+    display: flex;
+    flex-direction: column;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .card {
+        width: 70vw;
+    }
+    
+    .searchResultsContent {
+        display: flex;
+        flex-direction: row;
+    }
+    
+    .searchDescription {
+        flex: 0 0 auto;
+        width: 68%;
+    }
+    
+    .dropdownContainer {
+        flex: 0 0 auto;
+        width: 32%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .card {
+        width: 75vw;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .searchDescription {
+        width: 90%;
+    }
+
+    .dropdownContainer {
+        width: 10%;
+    }
 }
