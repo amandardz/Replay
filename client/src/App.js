@@ -19,7 +19,7 @@ function App() {
           <Route exact path="/login" component={LoginSignupPage} />
           <ProtectedRoute exact path="/addplaylist" component={AddPlaylist} />
           <ProtectedRoute exact path="/dashboard" component={Dashboard} />
-          <ProtectedRoute exact path="/search" component={Search} />
+          <Route exact path="/search" component={Search} />
           <Route path="*" component={() => "404 NOT FOUND"} />
         </Switch>
     </BrowserRouter>
