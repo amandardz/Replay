@@ -17,7 +17,7 @@ const videoSchema = new Schema({
     type: String
   },
   thumbnail: {
-    type: Array
+    type: String
   },
   dateAdded: {
     type: Date, 

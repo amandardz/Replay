@@ -109,14 +109,17 @@ function Search() {
                 </div>
                 <div className="video-container justify-content-center d-flex">
                     <Container>
-                        {/* {results.length > 0 ? 
+                        {results.length > 0 ? 
                         results.map(result =>
                         <SearchResultsCard 
-                            key={result.id}
-                            title={result.name}
-                            artists={result.artists}
-                            link={result.href}/>
-                        ) : <h3>Search for videos!</h3>} */}
+                            key={result.etag}
+                            title={result.snippet.title}
+                            channel={result.snippet.channelTitle}
+                            linkId={result.id.videoId}
+                            description={result.snippet.description}
+                            thumbnail={result.snippet.thumbnails.default}
+                            />
+                        ) : <h3>Search for videos!</h3>}
                     
                     </Container>
                 </div>
