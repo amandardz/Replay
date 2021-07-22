@@ -1,13 +1,23 @@
 #wrapper {
-  margin-left: 40%;
+  margin-left: 35%;
   min-height: 100vh;
-}
-.dashBackground {
-  background: #ced7e0;
 }
 
 @media only screen and (min-width: 768px) {
   #wrapper {
-    margin-left: 30%;
+    margin-left: 25%;
   }
 }
+
+@media only screen and (min-width: 992px) {
+  #wrapper {
+    margin-left: 20%;
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  #wrapper {
+    margin-left: 18%;
+  }
+}
+

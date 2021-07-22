@@ -28,17 +28,17 @@ function Dashboard() {
   }
 
   return <>
-  <Container>
+  <Container className='background'>
     <Navbar />
-    <Wrapper className='dashBackground'>
+    <Wrapper>
         <div className='playlistHeaderContainer'>
           <div id='playlistHeader'>
             <h1 id='playlistTitle'>My Playlists</h1>
             <button id='playlistBtn' onClick={() => {history.replace('/addplaylist')}}>Add Playlist</button>
           </div>
         </div>
-        <div className='d-flex justify-content-center'>
-          <ul className='playlists row row-cols-md-2 row-cols-lg-3 g-3'>
+        <div>
+          <ul className='playlists'>
             {playlists.length > 0 ? (
               playlists.map(playlist => {
                 return (
