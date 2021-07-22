@@ -65,11 +65,14 @@ function Search() {
             <Container>
               {results.length > 0 ? (
                 results.map((result) => (
-                  <SearchResultsCard
-                    key={result.id}
-                    title={result.snippet.title}
-                    description={result.snippet.description}
-                  />
+                  <SearchResultsCard 
+                      key={result.etag}
+                      title={result.snippet.title}
+                      channel={result.snippet.channelTitle}
+                      linkId={result.id.videoId}
+                      description={result.snippet.description}
+                      thumbnail={result.snippet.thumbnails.default}
+                      />
                 ))
               ) : (
                 <h3>Search for songs!</h3>
