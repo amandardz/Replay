@@ -1,8 +1,10 @@
 .playlistCard {
-    background: #e0173b;
-    margin: 20px;
+    background: #2b7f85;
+    width: 200px;
+    height: 200px;
     border-radius: 5px;
     box-shadow: 2px 2px 5px #010015;
+    margin: 0 auto;
 }
 
 .playlistCard:hover {
@@ -12,4 +14,11 @@
 .clickable {
     cursor: pointer;
     text-decoration: underline;
+}
+
+@media only screen and (min-width: 768px) {
+    .playlistCard {
+        width: 250px;
+        height: 250px;
+    }
 }
