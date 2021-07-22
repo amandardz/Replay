@@ -5,8 +5,8 @@ function SearchBar(props) {
     const { handleFormSubmit, search, handleInputChange } = props
 
     return (
-        <form onSubmit={handleFormSubmit}>
-            <div id='search-bar' className='input-group mt-3'>
+        <form className='searchBarContainer' onSubmit={handleFormSubmit}>
+            <div className='search-bar input-group mt-2'>
                 <input 
                 type='text' 
                 name='search'

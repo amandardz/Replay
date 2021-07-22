@@ -2,13 +2,13 @@ import React from "react";
 import { useEffect, useState } from "react";
 import API from "../utils/API";
 import axios from "axios";
+import Navbar from '../components/Navbar';
+import Wrapper from '../components/Wrapper'
 import SearchBar from "../components/SearchBar";
-import Navbar from "../components/Navbar";
 import { set } from "mongoose";
 import MusicPlayer from "../components/MusicPlayer";
 import Container from "../components/Container";
 import SearchResultsCard from "../components/SearchResultCard";
-import Wrapper from "../components/Wrapper";
 
 function Search() {
   const [token, setToken] = useState("");
@@ -51,7 +51,7 @@ function Search() {
 
   return (
     <>
-      <Container className="d-flex flex-row">
+      <Container className='background'>
         <Navbar />
         <Wrapper>
           <div className="d-flex justify-content-center">
@@ -61,7 +61,7 @@ function Search() {
               handleFormSubmit={handleFormSubmit}
             />
           </div>
-          <div className="song-container justify-content-center d-flex">
+          <div className="justify-content-center d-flex">
             <Container>
               {results.length > 0 ? (
                 results.map((result) => (
@@ -79,7 +79,7 @@ function Search() {
               )}
             </Container>
           </div>
-          <MusicPlayer />
+          {/* <MusicPlayer /> */}
         </Wrapper>
       </Container>
     </>

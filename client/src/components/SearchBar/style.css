@@ -1,14 +1,18 @@
-#search-bar {
-    width: 100%;
+.search-bar {
+    width: 90%;
+    margin: 0 auto;
 }
-  
-#search-bar i {
+
+.search-bar i {
     font-size: large;
 }
 
 @media only screen and (min-width: 768px) {
+    .searchBarContainer {
+        width: 80%;
+    }
 
-    #search-bar input, #search-bar i {
+    .search-bar input, .search-bar i {
         font-size: x-large;
     }
 }
