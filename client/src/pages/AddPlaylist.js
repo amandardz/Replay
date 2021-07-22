@@ -57,6 +57,7 @@ function AddPlaylist() {
                     <label for="description" className="form-label">Description (optional)</label>
                     <textarea
                         type="text"
+                        maxLength='100'
                         className="form-control"
                         id="description"
                         name="description"
