@@ -1,25 +1,22 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const songSchema = new Schema({
-  name: {
+const videoSchema = new Schema({
+  title: {
     type: String,
     required: true
   }, 
-  artists: {
-    type: Array,
+  channel: {
+    type: String,
     required: true
   },
-  link: {
+  linkId: {
     type: String
   }, 
-  explicit: {
-    type: Boolean
-  },
-  album: {
+  description: {
     type: String
   },
-  images: {
+  thumbnail: {
     type: Array
   },
   dateAdded: {
@@ -28,6 +25,6 @@ const songSchema = new Schema({
   }
 });
 
-const Song = mongoose.model('Song', songSchema);
+const Video = mongoose.model('Video', videoSchema);
 
-module.exports = Song; 
+module.exports = Video; 
