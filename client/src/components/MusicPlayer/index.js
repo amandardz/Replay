@@ -7,18 +7,15 @@ class MusicPlayer extends React.Component {
       height: '390',
       width: '390',
       playerVars: {
-        // https://developers.google.com/youtube/player_parameters
         autoplay: 1,
         mute: 1
       },
     };
 
-    return <YouTube videoId="8v_4O44sfjM" opts={opts} onReady={this._onReady} />;
+    return <YouTube videoId="7EUVJaKJtBY" opts={opts} onReady={this._onReady} />;
   }
 
   _onReady(event) {
-    // access to player in all event handlers via event.target
-    // event.target.pauseVideo();
     event.target.cueVideoById();
   }
 }

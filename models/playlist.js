@@ -9,7 +9,7 @@ const playlistSchema = new Schema({
   description: {
     type: String
   },
-  songs: {
+  videos: {
     type: Array
   },
   date: {
