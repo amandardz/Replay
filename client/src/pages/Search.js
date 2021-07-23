@@ -1,10 +1,8 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import API from "../utils/API";
 import axios from "axios";
 import SearchBar from "../components/SearchBar";
 import Navbar from "../components/Navbar";
-import { set } from "mongoose";
 import MusicPlayer from "../components/MusicPlayer";
 import Container from "../components/Container";
 import SearchResultsCard from "../components/SearchResultCard";

@@ -25,6 +25,9 @@ const Playlist = (props) => {
                 <p>{playlist.Playlist.description}</p>
                 <ul>
                     - list of videos -
+                    {playlist.Playlist.videos.map(video => {
+                        return video.linkId
+                    })}
                 </ul>
             </div>}
         </>
