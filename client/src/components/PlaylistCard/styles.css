@@ -17,11 +17,16 @@
     text-decoration: underline;
 }
 
+.cardDescription {
+    word-wrap: break-word;
+}
+
 @media only screen and (min-width: 768px) {
     .playlistCard {
         width: 270px;
         height: 250px;
         font-size: 18px;
+        margin: 0px;
     }
 }
 
