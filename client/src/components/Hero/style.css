@@ -11,7 +11,7 @@
 }
 
 #hero > div {
-  height: 75vh;
+  height: 80vh;
 }
 
 #hero img {
@@ -84,9 +84,7 @@
   #slogan, #hero .btn {
     font-size: 28px;
   }
-}
 
-@media only screen and (min-width: 1200px) {
   #hero > div {
     height: 90vh;
   }

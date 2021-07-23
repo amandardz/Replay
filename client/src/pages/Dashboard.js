@@ -3,7 +3,6 @@ import { useHistory } from 'react-router-dom';
 import Container from '../components/Container'
 import Navbar from '../components/Navbar';
 import Wrapper from '../components/Wrapper'
-import SearchBar from '../components/SearchBar'
 import PlaylistCard from '../components/PlaylistCard';
 import API from '../utils/API';
 import './styles.css'
