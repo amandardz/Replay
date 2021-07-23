@@ -9,13 +9,16 @@ const playlistSchema = new Schema({
   description: {
     type: String
   },
-  videos: {
-    type: Array
-  },
   date: {
     type: Date,
     default: Date.now
-  }
+  },
+  videos: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Video"
+    }
+  ]
 });
 
 const Playlist = mongoose.model('Playlist', playlistSchema);
