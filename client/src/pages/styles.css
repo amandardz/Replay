@@ -1,11 +1,10 @@
 #credentialContainer {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
     background: #010015;
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .credentialForms {
@@ -14,6 +13,7 @@
     border-radius: 10px;
     box-shadow: 3px 3px 8px #010015;
     width: 75%;
+    margin: 0 auto;
 }
 
 .background {
@@ -109,7 +109,6 @@ text-align: center;
     }
 
     .playlists {
-        gap: 15px;
         padding: 10px;
     }
 }
@@ -128,7 +127,6 @@ text-align: center;
 
     .playlists {
         grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-        gap: 20px;
     }
 }
 

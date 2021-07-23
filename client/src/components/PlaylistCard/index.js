@@ -9,7 +9,7 @@ function PlaylistCard (props) {
     return (
         <div className="playlistCard">
             <div className="card-body">
-                <div className="col">
+                <div>
                     <p className="card-title clickable" onClick={() => {history.replace('/playlist/' + props.id)}}>Playlist {props.title}</p>
                     <p>{props.description}</p>
                 </div>

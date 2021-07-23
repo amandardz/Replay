@@ -10,7 +10,7 @@ function LoginSignupPage() {
         <SignupForm />
       </div>
 
-      <div id='loginForm' className='credentialForms'>
+      <div id='loginForm' className='credentialForms mt-2'>
         <LoginForm />
       </div>
     </div>
