@@ -18,12 +18,14 @@ const Playlist = (props) => {
         // console.log('playlistId', props.match.params.playlistId)
         API.getPlaylist(props.match.params.playlistId)
             .then(res => {setPlaylist(res.data);
-                console.log(res.data)
-        //     videoLinks = playlist.Playlist.video.map(video => {
-        //         console.log('videoLinkId', video.linkId)
-        //         return video.linkId
+
+                console.log(playlist)
+            // videoLinks = playlist.Playlist.videos.map(video => {
+            //     console.log('videoLinkId', video.linkId)
+            //     return video.linkId
         // })
-    })
+    }
+        )
             .catch(err => console.log(err));
     }
 
