@@ -6,7 +6,6 @@ import API from '../utils/API';
 import MusicPlayer from '../components/MusicPlayer';
 
 const Playlist = (props) => {
-console.log(props)
     const [playlist, setPlaylist] = useState([]);
 
     useEffect(() => {
@@ -19,10 +18,13 @@ console.log(props)
         // console.log('playlistId', props.match.params.playlistId)
         API.getPlaylist(props.match.params.playlistId)
             .then(res => {setPlaylist(res.data);
-            videoLinks = playlist.Playlist.video.map(video => {
-                console.log('videoLinkId', video.linkId)
-                return video.linkId
-        })})
+                console.log(playlist)
+            // videoLinks = playlist.Playlist.videos.map(video => {
+            //     console.log('videoLinkId', video.linkId)
+            //     return video.linkId
+        // })
+    }
+        )
             .catch(err => console.log(err));
     }
 
