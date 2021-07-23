@@ -1,0 +1,39 @@
+.playlistSelection {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.playlistSelection select {
+  padding: 6px 7px;
+  width: 50%;
+  padding: 5px;
+}
+
+.playlistSelection button {
+  padding: 2px;
+  font-size: 12px;
+}
+
+@media only screen and (min-width: 768px) {
+  .playlistSelectionContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+
+  .playlistSelection {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .playlistSelection select {
+    width: 100%;
+  }
+
+  .playlistSelection button {
+    padding: 5px;
+  }
+}

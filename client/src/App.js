@@ -20,8 +20,8 @@ function App() {
           <Route exact path="/login" component={LoginSignupPage} />
           <Route exact path="/addplaylist" component={AddPlaylist} />
           <ProtectedRoute exact path="/dashboard" component={Dashboard} />
-          <ProtectedRoute exact path="/search" component={Search} />
-          <ProtectedRoute exact path="/playlist/:playlistId" component={Playlist} />
+          <Route exact path="/search" component={Search} />
+          <Route exact path="/playlist/:playlistId" component={Playlist} />
           <Route path="*" component={() => "404 NOT FOUND"} />
         </Switch>
     </BrowserRouter>

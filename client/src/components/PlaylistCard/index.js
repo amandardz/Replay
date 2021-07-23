@@ -7,9 +7,9 @@ function PlaylistCard (props) {
     const history = useHistory();
 
     return (
-        <div className="playlistCard justify-content-center">
-            <div className="card-body row">
-                <div className="col">
+        <div className="playlistCard">
+            <div className="card-body">
+                <div>
                     <p className="card-title clickable" onClick={() => {history.replace('/playlist/' + props.id)}}>Playlist {props.title}</p>
                     <p>{props.description}</p>
                 </div>

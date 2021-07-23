@@ -1,14 +1,15 @@
 .playlistCard {
     background: #2b7f85;
-    width: 200px;
-    height: 200px;
+    color: #010015;
+    width: 220px;
+    height: 190px;
     border-radius: 5px;
     box-shadow: 2px 2px 5px #010015;
     margin: 0 auto;
 }
 
 .playlistCard:hover {
-    transform: scale(1.1)
+    transform: scale(1.05)
 }
 
 .clickable {
@@ -18,7 +19,31 @@
 
 @media only screen and (min-width: 768px) {
     .playlistCard {
-        width: 250px;
+        width: 270px;
         height: 250px;
+        font-size: 18px;
+    }
+}
+
+@media only screen and (min-width: 950px) {
+    .playlistCard {
+        width: 280px;
+        height: 250px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .playlistCard {
+        width: 250px;
+        height: 225px;
+        font-size: 20px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .playlistCard {
+        width: 310px;
+        height: 300px;
+        font-size: 25px;
     }
 }

@@ -1,11 +1,10 @@
 #credentialContainer {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
     background: #010015;
+    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 
 .credentialForms {
@@ -14,10 +13,15 @@
     border-radius: 10px;
     box-shadow: 3px 3px 8px #010015;
     width: 75%;
+    margin: 0 auto;
 }
 
+.background {
+    background: #ced7e0;
+  }
+
 .playlistHeaderContainer {
-    padding: 5px;
+    padding: 5px 10px;
 }
 
 .video-container {
@@ -26,11 +30,12 @@
 
 #playlistHeader {
     background: #2b7f85;
+    color: #010015;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 10px;
+    padding: 15px;
 }
   
 #playlistTitle {
@@ -38,16 +43,17 @@ text-align: center;
 }
   
 #playlistBtn {
-background: #f49f04;
-width: 130px;
-border-radius: 4px;
-padding: 4px;
-margin: auto;
+    background: #f49f04;
+    color: #010015;
+    width: 130px;
+    border-radius: 5px;
+    padding: 4px;
+    margin: auto;
 }
 
 #addPlaylistContainer {
     height: 100%;
-    background: #e0173b;
+    background: #010015;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -75,8 +81,10 @@ margin: auto;
 }
 
 .playlists {
-padding: 0;
-width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 5px 0px;
 }
 
 .playlists > li {
@@ -101,18 +109,24 @@ width: 100%;
     }
 
     .playlists {
-        width: 95%;
+        padding: 10px;
     }
 }
+
+@media only screen and (min-width: 950px) {
+    .playlists {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
 
 @media only screen and (min-width: 1200px) {
     #addPlaylistContent {
         width: 70%;
     }
 
-
     .playlists {
-        width: 93%;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     }
 }
 
