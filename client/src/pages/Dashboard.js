@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import Container from '../components/Container'
 import Navbar from '../components/Navbar';
-import Wrapper from '../components/Wrapper'
+import Wrapper from '../components/Wrapper';
 import PlaylistCard from '../components/PlaylistCard';
 import API from '../utils/API';
-import './styles.css'
+import './styles.css';
 
 function Dashboard() {
 
