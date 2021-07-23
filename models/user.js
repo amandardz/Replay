@@ -32,7 +32,13 @@ const userSchema = new Schema({
   userCreated: {
     type: Date, 
     default: Date.now
-  }
+  },
+  playlists: [
+    {
+      type: Schema.Types.ObjectId,
+      ref: "Playlist"
+    }
+  ]
 });
 
 userSchema.methods.comparePassword = function(candidatePassword) {
