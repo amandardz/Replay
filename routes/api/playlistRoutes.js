@@ -13,9 +13,12 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const playlistData = await Playlist.create(req.body);
+    const playlistData = await Playlist.create({
+      name: req.body.name,
+      description: req.body.description
+    });
 
-    const dbUser = await User.findOneAndUpdate({}, { $push: { playlists: playlistData._id } }, { new: true });
+    const dbUser = await User.findOneAndUpdate({ _id: req.body.userId}, { $push: { playlists: playlistData._id } }, { new: true });
 
     res.status(200).json(dbUser);
 

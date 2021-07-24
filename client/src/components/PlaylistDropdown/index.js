@@ -23,7 +23,7 @@ function PlayListDropdown(props) {
 
     const loadPlaylists = () => {
         API.getPlaylists()
-            .then(res => setPlaylists(res.data))
+            .then(res => setPlaylists(res.data[0].playlists))
             .catch(err => console.log(err));
     }
 
@@ -57,7 +57,9 @@ function PlayListDropdown(props) {
         if(choice === "Add New Playlist") {
             history.replace("/addplaylist");
         } else {
+          
             if(formObject.title && formObject.channel && formObject.linkId) {
+
                 API.saveVideo(formObject)
                     .then(res => setPlaylists(res.data)) 
                     .catch(err => console.error(err));
