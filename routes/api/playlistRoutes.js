@@ -3,9 +3,9 @@ const { Playlist, User } = require('../../models');
 
 router.get('/', (req, res) => {
 
-  Playlist
+  User
     .find(req.query)
-    .populate('videos')
+    .populate('playlists')
     .sort({ date: -1 })
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
@@ -30,7 +30,7 @@ router.post('/', async (req, res) => {
 
 router.get('/:id', async (req, res) => {
     try {
-      const playlistData = await Playlist.findById(req.params.id);
+      const playlistData = await Playlist.findById(req.params.id).populate('videos');
   
       res.status(200).json(playlistData);
   

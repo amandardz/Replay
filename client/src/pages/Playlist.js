@@ -19,7 +19,7 @@ const Playlist = (props) => {
         )
             .catch(err => console.log(err));
     }
-console.log(playlist)
+
     return (
         <>
         <Container className='background'>
@@ -29,8 +29,8 @@ console.log(playlist)
                 {playlist  && <div><MusicPlayer videoLinks={playlist.videos.map(video => {
                 console.log('videoLinkId', video.linkId)
                 return video.linkId})}/><div>
-                    <h3>{playlist.Playlist.name}</h3>
-                    <p>{playlist.Playlist.description}</p>
+                    <h3>{playlist.name}</h3>
+                    <p>{playlist.description}</p>
                     <ul>
                         - list of videos -
 
