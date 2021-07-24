@@ -29,21 +29,23 @@ function PlayListDropdown(props) {
 
     const handleInputChange = (event) =>  {
         setChoice(event.target.value)
-        console.log(event.target.value)
-        let playlistId
-            for(let i = 0; i < playlists.length; i++) {
-                if(playlists[i].name === event.target.value) {
-                    playlistId = playlists[i]._id;
-                }
+
+        let playlistId;
+
+        for(let i = 0; i < playlists.length; i++) {
+            if(playlists[i].name === event.target.value) {
+                playlistId = playlists[i]._id;
             }
-            setFormObject({
-                playlistId: playlistId,
-                title: props.videoInfo.title,
-                channel: props.videoInfo.channel,
-                linkId: props.videoInfo.linkId,
-                description: props.videoInfo.description,
-                thumbnail: props.videoInfo.thumbnail.url
-            })
+        };
+
+        setFormObject({
+            playlistId: playlistId,
+            title: props.videoInfo.title,
+            channel: props.videoInfo.channel,
+            linkId: props.videoInfo.linkId,
+            description: props.videoInfo.description,
+            thumbnail: props.videoInfo.thumbnail.url
+        })
     }
 
     const addToPlaylist = async (e) =>  {
@@ -61,7 +63,8 @@ function PlayListDropdown(props) {
             if(formObject.title && formObject.channel && formObject.linkId) {
 
                 API.saveVideo(formObject)
-                    .then(res => setPlaylists(res.data)) 
+                    .then(res => setPlaylists(res.data))
+                    .then(history.replace('/dashboard'))
                     .catch(err => console.error(err));
             }
         }
