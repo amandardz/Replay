@@ -12,9 +12,15 @@ router.get('/', (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
-    const videoData = await Video.create(req.body);
+    const videoData = await Video.create({
+      title: req.body.title,
+      channel: req.body.channel,
+      linkId: req.body.linkId,
+      description: req.body.description,
+      thumbnail: req.body.thumbnail
+    })
 
-    const dbPlaylist = await Playlist.findOneAndUpdate({}, { $push: { videos: videoData._id } }, { new: true });
+    const dbPlaylist = await Playlist.findOneAndUpdate({ _id: req.body.playlistId }, { $push: { videos: videoData._id } }, { new: true });
 
     res.status(200).json(dbPlaylist);
 
