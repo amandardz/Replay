@@ -8,6 +8,7 @@ import AuthContext from "./contexts/AuthContext";
 import AddPlaylist from "./pages/AddPlaylist";
 import Dashboard from "./pages/Dashboard";
 import Playlist from "./pages/Playlist";
+import EditPlaylist from "./pages/EditPlaylist";
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
           <ProtectedRoute exact path="/dashboard" component={Dashboard} />
           <Route exact path="/search" component={Search} />
           <Route exact path="/playlist/:playlistId" component={Playlist} />
+          <Route exact path="/playlist/:playlistId/editplaylist" component={EditPlaylist} />
           <Route path="*" component={() => "404 NOT FOUND"} />
         </Switch>
     </BrowserRouter>
