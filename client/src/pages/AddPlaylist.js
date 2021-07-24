@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import API from '../utils/API';
 
 function AddPlaylist() {
     
     const [formObject, setFormObject] = useState({
-    name: "",
-    description: ""
+        userId: "",
+        name: "",
+        description: ""
     });
 
     const history = useHistory();
@@ -14,10 +16,15 @@ function AddPlaylist() {
         let value = event.target.value;
         const name = event.target.name;
 
-        setFormObject({
-        ...formObject,
-        [name]: value
-        });
+        API.getUser()
+            .then((res) => {
+                setFormObject({
+                    ...formObject,
+                    userId: res.data,
+                    [name]: value
+                });
+            })
+
     }
 
     const playlistFormHandler = async (e) => {
