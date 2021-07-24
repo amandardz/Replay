@@ -1,4 +1,5 @@
 module.exports = {
-  User: require('./user'),
-  Playlist: require('./playlist')
+  User: require('./User'),
+  Playlist: require('./Playlist'),
+  Video: require('./Video')
 };
