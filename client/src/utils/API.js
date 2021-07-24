@@ -6,5 +6,8 @@ export default {
   },
   getPlaylist: function(id) {
     return axios.get('/api/playlist/' + id);
+  },
+  saveVideo: function(video) {
+    return axios.post('/api/video', video)
   }
 };
