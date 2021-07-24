@@ -16,6 +16,7 @@ class MusicPlayer extends React.Component {
   }
 
   _onReady(event) {
+    
     event.target.cueVideoById();
   }
 }

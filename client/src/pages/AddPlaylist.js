@@ -48,7 +48,6 @@ function AddPlaylist() {
         }
     }
 
-
     return(
         <form className='playlistContentContainer' onSubmit={(e) => {playlistFormHandler(e)}}>
             <div className='playlistContent'>

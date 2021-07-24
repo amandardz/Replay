@@ -3,11 +3,10 @@ import { useHistory } from 'react-router-dom';
 import API from '../../utils/API';
 import './style.css'
 
-function PlayListDropdown(videoInfo) {
+function PlayListDropdown(props) {
 
     const [playlists, setPlaylists] = useState([]);
     const [choice, setChoice] = useState('');
-    const [choiceId, setChoiceId] = useState('');
     const history = useHistory();
     const [formObject, setFormObject] = useState({
         playlistId: '',
@@ -29,7 +28,22 @@ function PlayListDropdown(videoInfo) {
     }
 
     const handleInputChange = (event) =>  {
-        setChoice(event.target.value);
+        setChoice(event.target.value)
+        console.log(event.target.value)
+        let playlistId
+            for(let i = 0; i < playlists.length; i++) {
+                if(playlists[i].name === event.target.value) {
+                    playlistId = playlists[i]._id;
+                }
+            }
+            setFormObject({
+                playlistId: playlistId,
+                title: props.videoInfo.title,
+                channel: props.videoInfo.channel,
+                linkId: props.videoInfo.linkId,
+                description: props.videoInfo.description,
+                thumbnail: props.videoInfo.thumbnail.url
+            })
     }
 
     const addToPlaylist = async (e) =>  {
@@ -39,32 +53,13 @@ function PlayListDropdown(videoInfo) {
             alert("Please choose a playlist.");
             return;
         }
-        
-        var playlistId;
-
-        for(let i = 0; i < playlists.length; i++) {
-            if(playlists[i].name === choice) {
-                playlistId = playlists[i]._id;
-            }
-        }
-        setChoiceId(playlistId);
-
+    
         if(choice === "Add New Playlist") {
             history.replace("/addplaylist");
         } else {
-            console.log("Push video id to playlist info.");
-            setFormObject({
-                playlistId: choiceId,
-                title: videoInfo.videoInfo.title,
-                channel: videoInfo.videoInfo.channel,
-                linkId: videoInfo.videoInfo.linkId,
-                description: videoInfo.videoInfo.description,
-                thumbnail: videoInfo.videoInfo.thumbnail.url
-            })
-            
-            if(formObject.title && formObject.channel) {
+            if(formObject.title && formObject.channel && formObject.linkId) {
                 API.saveVideo(formObject)
-                    .then(res => console.log(choiceId))
+                    .then(res => setPlaylists(res.data)) 
                     .catch(err => console.error(err));
             }
         }
@@ -87,6 +82,5 @@ function PlayListDropdown(videoInfo) {
     </form>
     )
 }
-
 
 export default PlayListDropdown;

@@ -6,39 +6,29 @@ import API from '../utils/API';
 import MusicPlayer from '../components/MusicPlayer';
 
 const Playlist = (props) => {
-    const [playlist, setPlaylist] = useState([]);
+    const [playlist, setPlaylist] = useState();
 
     useEffect(() => {
         loadPlaylist()
     }, []);
 
-    const videoLinks = []
-
     function loadPlaylist() {
         // console.log('playlistId', props.match.params.playlistId)
         API.getPlaylist(props.match.params.playlistId)
-            .then(res => {setPlaylist(res.data);
-
-                console.log(playlist)
-            // videoLinks = playlist.Playlist.videos.map(video => {
-            //     console.log('videoLinkId', video.linkId)
-            //     return video.linkId
-        // })
-    }
+            .then(res => {setPlaylist(res.data)}
         )
             .catch(err => console.log(err));
     }
-
-
-    const isLoading = playlist && playlist.Playlist ? true : false;
-
+console.log(playlist)
     return (
         <>
         <Container className='background'>
             <Navbar />
             <Wrapper>
-                {!isLoading && <div>loading...</div>}
-                {isLoading && <div><MusicPlayer videoLinks={videoLinks}/><div>
+                {!playlist && <div>loading...</div>}
+                {playlist  && <div><MusicPlayer videoLinks={playlist.videos.map(video => {
+                console.log('videoLinkId', video.linkId)
+                return video.linkId})}/><div>
                     <h3>{playlist.Playlist.name}</h3>
                     <p>{playlist.Playlist.description}</p>
                     <ul>
