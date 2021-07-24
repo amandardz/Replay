@@ -28,7 +28,7 @@ router.get('/:id', async (req, res) => {
     try {
       const playlistData = await Playlist.findById(req.params.id);
   
-      res.status(200).json({ Playlist: playlistData });
+      res.status(200).json(playlistData);
   
     } catch (err) {
       console.log(err);
@@ -36,16 +36,16 @@ router.get('/:id', async (req, res) => {
     }
 });
 
-router.put('/:id', async (req, res) => {
-    try {
-      const playlistData = await Playlist.findOneAndUpdate({ _id: req.params.id }, req.body);
-  
-      res.status(200).json(playlistData);
-  
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
+router.put('/:id/editplaylist', async (req, res) => {
+  try {
+    const playlistData = await Playlist.findOneAndUpdate({ _id: req.params.id }, req.body);
+
+    res.status(200).json(playlistData);
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.delete('/:id', async (req, res) => {
