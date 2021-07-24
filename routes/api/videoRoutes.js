@@ -3,8 +3,9 @@ const { Video, Playlist } = require('../../models');
 
 router.get('/', (req, res) => {
 
-  Video
+  Playlist
     .find(req.query)
+    .populate("videos")
     .sort({ date: -1 })
     .then(dbModel => res.json(dbModel))
     .catch(err => res.status(422).json(err));
