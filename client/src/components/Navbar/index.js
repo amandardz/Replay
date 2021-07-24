@@ -33,19 +33,19 @@ function Navbar(props) {
         <img src='/images/replay-logo.png' alt='Replay Logo'/>
       </a>
       <ul className='nav flex-column mb-auto text-center'>
-        <Link to='/dashboard' className='nav-link py-3 border-bottom' title='Search' data-bs-toggle='tooltip' data-bs-placement='right'>
+        <Link to='/' className='nav-link py-3 border-bottom' title='Search' data-bs-toggle='tooltip' data-bs-placement='right'>
           <li className='nav-item'>
-              <i className='bi bi-house-door'><span>Home</span></i>
+            <i className='bi bi-house-door'><span>Home</span></i>
           </li>
         </Link>
         <Link to='/search' className='nav-link py-3 border-bottom' title='Search' data-bs-toggle='tooltip' data-bs-placement='right'>
           <li>
-              <i className='bi bi-search'><span>Search</span></i>
+            <i className='bi bi-search'><span>Search</span></i>
           </li>
         </Link>
         <Link to='/dashboard' className='nav-link py-3 border-bottom' title='Playlist' data-bs-toggle='tooltip' data-bs-placement='right'>
           <li>
-              <i className='bi bi-collection-play'><span>Playlists</span></i>
+            <i className='bi bi-collection-play'><span>Playlists</span></i>
           </li>
         </Link>
       </ul>
