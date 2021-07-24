@@ -11,6 +11,9 @@ export default {
     return axios.post('/api/video', video)
   },
   getSession: function() {
-    return axios.get('/api/user');
+    return axios.get('/api/user/session');
+  },
+  getUser: function() {
+    return axios.get('/api/user')
   }
 };

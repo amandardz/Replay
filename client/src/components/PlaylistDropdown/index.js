@@ -24,7 +24,7 @@ function PlayListDropdown(videoInfo) {
 
     const loadPlaylists = () => {
         API.getPlaylists()
-            .then(res => setPlaylists(res.data))
+            .then(res => setPlaylists(res.data[0].playlists))
             .catch(err => console.log(err));
     }
 
@@ -52,7 +52,6 @@ function PlayListDropdown(videoInfo) {
         if(choice === "Add New Playlist") {
             history.replace("/addplaylist");
         } else {
-            console.log("Push video id to playlist info.");
             setFormObject({
                 playlistId: choiceId,
                 title: videoInfo.videoInfo.title,

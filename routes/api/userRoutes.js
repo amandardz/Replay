@@ -3,6 +3,10 @@ const { User } = require('../../models');
 const bcrypt = require('bcryptjs');
 
 router.get('/', (req, res) => {
+  res.status(200).send(req.session.user_id)
+});
+
+router.get('/session', (req, res) => {
   if(req.session.logged_in) {
     res.status(200).send("200");
   } else {
