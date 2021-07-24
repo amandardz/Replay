@@ -2,6 +2,10 @@ import React from 'react';
 import YouTube from 'react-youtube';
 
 class MusicPlayer extends React.Component {
+  state = {
+    currentIndex: 0,
+  }
+
   render() {
     const opts = {
       height: '390',
@@ -12,13 +16,18 @@ class MusicPlayer extends React.Component {
       },
     };
     console.log(this.props.videoLinks)
-    return <YouTube videoId={this.props.videoLinks} opts={opts} onReady={this._onReady} />;
+    return <YouTube key={this.state.currentIndex} videoId={this.props.videoLinks[this.state.currentIndex]} opts={opts} onReady={this._onReady} onEnd={ () => {
+      this.setState({currentIndex: this.state.currentIndex + 1})
+    }
+    } />;
   }
 
-  _onReady(event) {
-    
-    event.target.cueVideoById();
-  }
+
+  // _onReady= (event) => {
+  //   for (let i = 0; i < this.props.videoLinks.length; i++) {
+  //     event.target.cueVideoById(this.props.videoLinks[i]);
+  //   }
+  // }
 }
 
 export default MusicPlayer; 

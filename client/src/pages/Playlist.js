@@ -7,21 +7,21 @@ import MusicPlayer from '../components/MusicPlayer';
 import SoloPlaylistCard from '../components/SoloPlaylistCard';
 
 const Playlist = (props) => {
-    const [playlist, setPlaylist] = useState();
+  const [playlist, setPlaylist] = useState();
 
-    useEffect(() => {
-        loadPlaylist()
-    }, []);
+  useEffect(() => {
+    loadPlaylist();
+  }, []);
 
-    function loadPlaylist() {
-        // console.log('playlistId', props.match.params.playlistId)
-        API.getPlaylist(props.match.params.playlistId)
-            .then(res => {setPlaylist(res.data)}
-        )
-            .catch(err => console.log(err));
-    }
-
-    return (
+  function loadPlaylist() {
+    API.getPlaylist(props.match.params.playlistId)
+      .then((res) => {
+        setPlaylist(res.data);
+      })
+      .catch((err) => console.log(err));
+  }
+  
+  return (
         <>
         <Container className='background'>
             <Navbar />
@@ -51,7 +51,7 @@ const Playlist = (props) => {
             </Wrapper>
         </Container>
         </>
-    )
-}
+  );
+};
 
 export default Playlist;
