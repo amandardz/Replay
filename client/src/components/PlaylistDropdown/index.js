@@ -10,6 +10,7 @@ function PlayListDropdown(videoInfo) {
     const [choiceId, setChoiceId] = useState('');
     const history = useHistory();
     const [formObject, setFormObject] = useState({
+        playlistId: '',
         title: '',
         channel: '',
         linkId: '',
@@ -53,6 +54,7 @@ function PlayListDropdown(videoInfo) {
         } else {
             console.log("Push video id to playlist info.");
             setFormObject({
+                playlistId: choiceId,
                 title: videoInfo.videoInfo.title,
                 channel: videoInfo.videoInfo.channel,
                 linkId: videoInfo.videoInfo.linkId,
