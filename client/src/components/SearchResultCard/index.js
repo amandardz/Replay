@@ -18,9 +18,7 @@ function searchResultsCard(props) {
           <p>{he.decode(props.description)}</p>
         </div>
         <div className='dropdownContainer'>
-          <form>
-            <PlayListDropdown />
-          </form>
+          <PlayListDropdown videoInfo={props}/>
         </div>
       </div>
     </div>

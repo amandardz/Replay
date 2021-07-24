@@ -43,7 +43,7 @@ function AddPlaylist() {
     function handleDescriptionLimit () {
         const descriptionCharacters = document.querySelector('#description')
         let characterLength = 100
-        if(descriptionCharacters.value.length > characterLength) {
+        if(descriptionCharacters.value.length >= characterLength) {
             alert('You have reached character limit.')
         }
     }
@@ -69,6 +69,7 @@ function AddPlaylist() {
                         className="form-control"
                         id="description"
                         name="description"
+                        maxLength='100'
                         onKeyUp={handleDescriptionLimit}
                         onChange={handleInputChange}/>
                 </div>
