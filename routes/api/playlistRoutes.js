@@ -31,7 +31,7 @@ router.post('/', async (req, res) => {
 router.get('/:id', async (req, res) => {
     try {
       const playlistData = await Playlist.findById(req.params.id).populate('videos');
-  
+
       res.status(200).json(playlistData);
   
     } catch (err) {
