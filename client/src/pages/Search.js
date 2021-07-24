@@ -71,6 +71,7 @@ function Search() {
                       linkId={result.id.videoId}
                       description={result.snippet.description}
                       thumbnail={result.snippet.thumbnails.default}
+                      channelId={result.snippet.channelId}
                       />
                 ))
               ) : (
