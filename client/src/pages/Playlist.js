@@ -12,6 +12,7 @@ const Playlist = (props) => {
     loadPlaylist();
   }, []);
 
+
   function loadPlaylist() {
     API.getPlaylist(props.match.params.playlistId)
       .then((res) => {
