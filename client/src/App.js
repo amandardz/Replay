@@ -9,6 +9,7 @@ import AddPlaylist from "./pages/AddPlaylist";
 import Dashboard from "./pages/Dashboard";
 import Playlist from "./pages/Playlist";
 import EditPlaylist from "./pages/EditPlaylist";
+import LoginCheckRoute from "./components/LoginCheckRoute.js";
 
 function App() {
 
@@ -18,7 +19,7 @@ function App() {
     <BrowserRouter>
         <Switch>
           <Route exact path={["/", "/home"]} component={Homepage} />
-          <Route exact path="/login" component={LoginSignupPage} />
+          <LoginCheckRoute exact path="/login" component={LoginSignupPage} />
           <ProtectedRoute exact path="/addplaylist" component={AddPlaylist} />
           <ProtectedRoute exact path="/dashboard" component={Dashboard} />
           <ProtectedRoute exact path="/search" component={Search} />
