@@ -64,8 +64,9 @@ function PlayListDropdown(props) {
 
                 API.saveVideo(formObject)
                     .then(res => setPlaylists(res.data))
-                    .then(history.replace('/dashboard'))
-                    .catch(err => console.error(err));
+                    .then(history.replace('/search')) 
+                    .catch(err => console.error(err))
+                    alert('Song successfully added!');
             }
         }
     }
