@@ -21,13 +21,6 @@ class MusicPlayer extends React.Component {
     }
     } />;
   }
-
-
-  // _onReady= (event) => {
-  //   for (let i = 0; i < this.props.videoLinks.length; i++) {
-  //     event.target.cueVideoById(this.props.videoLinks[i]);
-  //   }
-  // }
 }
 
 export default MusicPlayer; 
