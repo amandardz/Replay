@@ -10,7 +10,9 @@ const routes = require('./routes')
 const mongoose = require('mongoose');
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/replay", {
   useNewUrlParser: true,
-  useUnifiedTopology: true
+  useUnifiedTopology: true,
+  useCreateIndex: true, 
+  useFindAndModify: false
 });
 
 const options = {

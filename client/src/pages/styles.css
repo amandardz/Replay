@@ -51,7 +51,7 @@ text-align: center;
     margin: auto;
 }
 
-#addPlaylistContainer {
+.playlistContentContainer {
     height: 100%;
     background: #010015;
     display: flex;
@@ -60,19 +60,19 @@ text-align: center;
     align-items: center;
 }
 
-#addPlaylistContent {
+.playlistContent {
     background: #f49f04;
     padding: 35px;
     border-radius: 10px;
     width: 95%;
 }
 
-#addPlaylistContent > div > label {
+.playlistContent > div > label {
     font-size: 22px;
     font-weight: 700;
 }
 
-#addPlaylistContent > button {
+.playlistContent > button {
     background: #010015;
     color: #f8f9fa;
     font-size: 20px;
@@ -104,7 +104,7 @@ text-align: center;
         width: 40%;
     }
     
-    #addPlaylistContent > div > textarea {
+    .playlistContent > div > textarea {
         height: 100px;
     }
 
@@ -121,7 +121,7 @@ text-align: center;
 
 
 @media only screen and (min-width: 1200px) {
-    #addPlaylistContent {
+    .playlistContent {
         width: 70%;
     }
 

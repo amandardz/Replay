@@ -57,8 +57,8 @@ function AddPlaylist() {
 
 
     return(
-        <form id='addPlaylistContainer' onSubmit={(e) => {playlistFormHandler(e)}}>
-            <div id='addPlaylistContent'>
+        <form className='playlistContentContainer' onSubmit={(e) => {playlistFormHandler(e)}}>
+            <div className='playlistContent'>
                 <h1>Add playlist page</h1>
                 <div className="mb-3">
                     <label for="playlist-title" className="form-label">Playlist Title</label>
