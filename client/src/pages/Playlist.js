@@ -21,7 +21,7 @@ const Playlist = (props) => {
       .catch((err) => console.log(err));
   }
   
-  return (
+    return (
         <>
         <Container className='background'>
             <Navbar />
@@ -30,7 +30,6 @@ const Playlist = (props) => {
                 {playlist  && <div>
                     <MusicPlayer
                         videoLinks={playlist.videos.map(video => {
-                            console.log('videoLinkId', video.linkId)
                             return video.linkId
                         })}
                     />
@@ -41,7 +40,10 @@ const Playlist = (props) => {
                             {playlist.videos.map(video => {
                                 return <SoloPlaylistCard
                                     key={video._id}
-                                    
+                                    videoId={video._id}
+                                    title={video.title}
+                                    channel={video.channel}
+                                    description={video.description}
                                 />
                             })}
                         </ul>
@@ -51,7 +53,7 @@ const Playlist = (props) => {
             </Wrapper>
         </Container>
         </>
-  );
+    );
 };
 
 export default Playlist;

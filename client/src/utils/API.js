@@ -10,6 +10,9 @@ export default {
   saveVideo: function(video) {
     return axios.post('/api/video', video)
   },
+  deleteVideo: function(id) {
+    return axios.delete('/api/video/' + id)
+  },
   getSession: function() {
     return axios.get('/api/user/session');
   },
