@@ -10,9 +10,18 @@ function Navbar(props) {
 
   const logout = async () => {
     try {
-      setLoggedIn(false);
-      history.replace('/');
-      alert("Logout successful.");
+      const response = await fetch('/api/user/logout', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+      });
+
+      if(response.ok) {
+        setLoggedIn(false);
+        history.replace('/');
+        alert("Logout successful.");
+      } else {
+        alert(response.statusText);
+      }
     } catch(err) {
       console.error(err);
     }

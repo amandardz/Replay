@@ -9,5 +9,8 @@ export default {
   },
   saveVideo: function(video) {
     return axios.post('/api/video', video)
+  },
+  getSession: function() {
+    return axios.get('/api/user');
   }
 };
