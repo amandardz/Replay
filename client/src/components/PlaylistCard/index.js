@@ -21,14 +21,17 @@ function PlaylistCard (props) {
     
 
     return (
-        <div className="playlistCard">
-            <div className="card-body">
-                <p className="card-title clickable" onClick={() => {history.replace('/playlist/' + props.id)}}>Playlist {props.title}</p>
-                <p className='cardDescription text-wrap'>{props.description}</p>
+
+        <li className='playlistCard d-flex flex-column' key={props.id}>
+            <div className='playlistInfoContainer'>
+                <p className="card-title clickable text-center text-wrap text-break p-2 m-0" onClick={() => {history.replace('/playlist/' + props.id)}}>Playlist {props.title}</p>
+                <p className='cardDescription text-wrap text-break px-3 m-0'>{props.description}</p>
+                <div className='d-flex flex-row justify-content-center align-items-center'>
+                    <button className='editBtn btn me-1' onClick={(e) => {history.replace('/playlist/' + props.id + '/editplaylist' )}}>Edit</button>
+                    <button className='deleteBtn btn' onClick={(e) => {handleDeleteBtn(e)}}>Delete</button>
+                </div>
             </div>
-                <button className='btn' onClick={(e) => {history.replace('/playlist/' + props.id + '/editplaylist' )}}>Edit</button>
-                <button className='btn' onClick={(e) => {handleDeleteBtn(e)}}>Delete</button>
-        </div>
+        </li>
     )
 }
 

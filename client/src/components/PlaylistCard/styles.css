@@ -1,8 +1,8 @@
 .playlistCard {
     background: #2b7f85;
     color: #010015;
-    width: 220px;
-    height: 190px;
+    width: 90%;
+    height: 150px;
     border-radius: 5px;
     box-shadow: 2px 2px 5px #010015;
     margin: 0 auto;
@@ -17,38 +17,39 @@
     text-decoration: underline;
 }
 
-.cardDescription {
-    word-wrap: break-word;
+.playlistInfoContainer {
+    height: 95%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.editBtn {
+    background: #fff;
+    color: #010015;
+}
+
+.deleteBtn {
+    background: #010015;
+    color: #fff;
 }
 
 @media only screen and (min-width: 768px) {
     .playlistCard {
-        width: 270px;
+        width: 95%;
         height: 250px;
-        font-size: 18px;
-        margin: 0px;
-    }
-}
-
-@media only screen and (min-width: 950px) {
-    .playlistCard {
-        width: 280px;
-        height: 250px;
+        font-size: 20px;
     }
 }
 
 @media only screen and (min-width: 992px) {
     .playlistCard {
-        width: 250px;
-        height: 225px;
-        font-size: 20px;
+        font-size: 23px;
     }
 }
 
 @media only screen and (min-width: 1200px) {
     .playlistCard {
-        width: 310px;
-        height: 300px;
         font-size: 25px;
     }
 }
