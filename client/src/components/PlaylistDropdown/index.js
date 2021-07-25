@@ -58,6 +58,7 @@ function PlayListDropdown(props) {
     
         if(choice === "Add New Playlist") {
             history.replace("/addplaylist");
+            
         } else {
           
             if(formObject.title && formObject.channel && formObject.linkId) {
