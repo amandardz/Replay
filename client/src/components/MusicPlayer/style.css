@@ -10,6 +10,10 @@
   margin-top: 10px;
 }
 
+.media-icon {
+  font-size: 25px;
+}
+
 @media only screen and (min-width: 768px){
   .widget {
     height: 400px!important;
@@ -17,5 +21,25 @@
 
   .media-container >div {
     height: 100%
+  }
+}
+
+@media only screen and (min-width: 992px){
+  .media-icon {
+    font-size: 35px;
+  }
+}
+
+@media only screen and (min-width: 1200px){
+  .widget {
+    height: 500px!important;
+  }
+}
+
+@media only screen and (min-width: 1400px){
+  .widget {
+    width: 90%!important;
+    height: 550px!important;
+
   }
 }
