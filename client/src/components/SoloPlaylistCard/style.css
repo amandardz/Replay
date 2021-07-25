@@ -1,9 +1,21 @@
-.songCard{
-  width: 100%;
+.songCard {
+  width: 90%;
 }
 
 @media only screen and (min-width: 768px) {
-  .widget {
-    
+  .songCard {
+    width: 92%;
+  }
+
+  .songCard .card-body {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .songCard {
+    width: 92%;
   }
 }
