@@ -33,7 +33,7 @@ function Dashboard() {
         <div className='playlistHeaderContainer'>
           <div id='playlistHeader'>
             <h1 id='playlistTitle'>My Playlists</h1>
-            <button id='playlistBtn' onClick={() => {history.replace('/addplaylist')}}>Add Playlist</button>
+            <button className='playlistBtn btn' onClick={() => {history.replace('/addplaylist')}}>Add Playlist</button>
           </div>
         </div>
         <div>
@@ -41,13 +41,11 @@ function Dashboard() {
             {playlists.length > 0 ? (
               playlists.map(playlist => {
                 return (
-                  <li key={playlist._id}>
                     <PlaylistCard
                       id={playlist._id}
                       title={playlist.name}
                       description={playlist.description}
                     />
-                  </li>
                 );
               })
             ) : (
