@@ -20,10 +20,10 @@ function SoloPlaylistCard(props) {
             <div className="card-body">
                 <div>
                     <p className="card-title">{props.title}</p>
-                    <p>From Channel: {props.channel}</p>
-                    <p>{props.description}</p>
+                    {/* <p>From Channel: {props.channel}</p>
+                    <p>{props.description}</p> */}
                 </div>
-                <button onClick={(e) => {handleDelete(e)}}>Delete</button>
+                <button className='p-1 btn-danger' onClick={(e) => {handleDelete(e)}}>Delete</button>
             </div>
         </div>
     );
