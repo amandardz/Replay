@@ -67,7 +67,7 @@ function Search() {
                     />
                 ))
               ) : (
-                <h3>Search for songs!</h3>
+                <h3 className='mt-2'>Search for songs!</h3>
               )}
             </Container>
           </div>
