@@ -1,6 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import API from "../../utils/API";
+import './style.css'
 
 function SoloPlaylistCard(props) {
 
@@ -15,9 +16,9 @@ function SoloPlaylistCard(props) {
     };
 
     return (
-        <div className="card">
+        <div className="songCard card">
             <div className="card-body">
-                <div className="">
+                <div>
                     <p className="card-title">{props.title}</p>
                     <p>From Channel: {props.channel}</p>
                     <p>{props.description}</p>
