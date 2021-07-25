@@ -1,3 +1,21 @@
-#player {
-  margin-right: 50px;
+.widget {
+  display: flex;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.media-btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+@media only screen and (min-width: 768px){
+  .widget {
+    height: 400px!important;
+  }
+
+  .media-container >div {
+    height: 100%
+  }
 }
