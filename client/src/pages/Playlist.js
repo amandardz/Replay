@@ -28,15 +28,16 @@ const Playlist = (props) => {
             <Wrapper>
                 {!playlist && <div>loading...</div>}
                 {playlist  && <div>
+                    <h4 className='playlistName'>{playlist.name}</h4>
+                        <p className='playlistDescription'>{playlist.description}</p>
                     <MusicPlayer
                         videoLinks={playlist.videos.map(video => {
                             return video.linkId
                         })}
                     />
                     <div>
-                        <h3>{playlist.name}</h3>
-                        <p>{playlist.description}</p>
-                        <ul>
+
+                        <ul className='songCardsContainer'>
                             {playlist.videos.map(video => {
                                 return <SoloPlaylistCard
                                     key={video._id}
