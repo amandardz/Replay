@@ -28,7 +28,7 @@ const Playlist = (props) => {
             <Wrapper>
                 {!playlist && <div>loading...</div>}
                 {playlist  && <div>
-                    <h4 className='playlistName'>{playlist.name}</h4>
+                    <h4 className='p-2 playlistName'>{playlist.name}</h4>
                         <p className='playlistDescription'>{playlist.description}</p>
                     <MusicPlayer
                         videoLinks={playlist.videos.map(video => {
@@ -37,14 +37,14 @@ const Playlist = (props) => {
                     />
                     <div>
 
-                        <ul className='songCardsContainer'>
+                        <ul className='d-flex flex-column align-items-center songCardsContainer'>
                             {playlist.videos.map(video => {
                                 return <SoloPlaylistCard
                                     key={video._id}
                                     videoId={video._id}
                                     title={video.title}
-                                    channel={video.channel}
-                                    description={video.description}
+                                    // channel={video.channel}
+                                    // description={video.description}
                                 />
                             })}
                         </ul>
