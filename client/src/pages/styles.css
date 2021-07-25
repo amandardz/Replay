@@ -60,6 +60,20 @@ text-align: center;
     align-items: center;
 }
 
+.playlistName {
+    text-align: center;
+    color:black;
+    font-size: 30px;
+}
+
+.playlistDescription {
+    text-align: center;
+}
+
+.songCardsContainer {
+    padding-left: 0;
+}
+
 .playlistContent {
     background: #f49f04;
     padding: 35px;
