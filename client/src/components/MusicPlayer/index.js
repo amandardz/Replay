@@ -24,7 +24,7 @@ class MusicPlayer extends React.Component {
         mute: 1,
       },
     };
-    //console.log(this.props.videoLinks)
+    
     return (
       <>
         <div className="media-container">
@@ -39,10 +39,7 @@ class MusicPlayer extends React.Component {
           />
         </div>
         <div className="media-btn-container">
-          <button
-            className="p-1 back btn"
-            onClick={this.handleBackBtn}
-          >
+          <button className="p-1 back btn" onClick={this.handleBackBtn} >
             <i className="media-icon bi bi-arrow-left-square-fill"></i>
           </button>
           <button className="p-1 next ms-2 btn" onClick={this.handleNextBtn}>

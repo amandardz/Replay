@@ -17,16 +17,16 @@ function App() {
 
   return <AuthContext.Provider value={{loggedIn, setLoggedIn}}>
     <BrowserRouter>
-        <Switch>
-          <Route exact path={["/", "/home"]} component={Homepage} />
-          <LoginCheckRoute exact path="/login" component={LoginSignupPage} />
-          <ProtectedRoute exact path="/addplaylist" component={AddPlaylist} />
-          <ProtectedRoute exact path="/dashboard" component={Dashboard} />
-          <ProtectedRoute exact path="/search" component={Search} />
-          <ProtectedRoute exact path="/playlist/:playlistId" component={Playlist} />
-          <ProtectedRoute exact path="/playlist/:playlistId/editplaylist" component={EditPlaylist} />
-          <Route path="*" component={() => "404 NOT FOUND"} />
-        </Switch>
+      <Switch>
+        <Route exact path={["/", "/home"]} component={Homepage} />
+        <LoginCheckRoute exact path="/login" component={LoginSignupPage} />
+        <ProtectedRoute exact path="/addplaylist" component={AddPlaylist} />
+        <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+        <ProtectedRoute exact path="/search" component={Search} />
+        <ProtectedRoute exact path="/playlist/:playlistId" component={Playlist} />
+        <ProtectedRoute exact path="/playlist/:playlistId/editplaylist" component={EditPlaylist} />
+        <Route path="*" component={() => "404 NOT FOUND"} />
+      </Switch>
     </BrowserRouter>
   </AuthContext.Provider>
 }

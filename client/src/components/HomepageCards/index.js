@@ -30,7 +30,7 @@ function HomepageCards() {
           return (
             <div id='homeCard' key={key} className='d-flex flex-column justify-content-evenly align-items-center'>
               <div>
-              <i className={icon}></i>
+                <i className={icon}></i>
               </div>
               <div>
                 <p className='card-title text-center'>{heading}</p>
@@ -41,7 +41,7 @@ function HomepageCards() {
         })}
       </div>
     </div>
-    )
+  )
 
 };
 

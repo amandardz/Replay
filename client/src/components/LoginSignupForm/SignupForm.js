@@ -16,7 +16,6 @@ function Signup() {
   });
 
   function handleInputChange(event) {
-    // add code to control the components here
     let value = event.target.value;
     const name = event.target.name;
 
@@ -43,6 +42,7 @@ function Signup() {
       } else {
         alert(response.statusText);
       }
+      
     } else {
       alert("Please complete all fields.")
     }

@@ -20,6 +20,7 @@ function Footer() {
       linkedin: 'https://www.linkedin.com/in/amandardz/',
     }
   ]
+
   return (
     <Container className='footerContainer'>
       <div id='aboutApp'>
@@ -33,9 +34,11 @@ function Footer() {
               <div className='d-flex flex-column justify-content-center align-items-center'>
                 <span className='creatorName'>{name}</span>
                 <div className='d-flex flex-row'>
-                  <a href={github}><i className='contact-icons bi bi-github me-2'></i>
+                  <a href={github}>
+                    <i className='contact-icons bi bi-github me-2'></i>
                   </a>
-                  <a href={linkedin}><i className='contact-icons bi bi-linkedin'></i>
+                  <a href={linkedin}>
+                    <i className='contact-icons bi bi-linkedin'></i>
                   </a>
                 </div>
               </div>

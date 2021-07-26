@@ -6,8 +6,8 @@ const path = require("path");
 const PORT = process.env.PORT || 3001;
 const app = express();
 const routes = require('./routes')
-
 const mongoose = require('mongoose');
+
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/replay", {
   useNewUrlParser: true,
   useUnifiedTopology: true,
@@ -18,7 +18,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/replay", {
 const options = {
   mongoUrl: process.env.MONGODB_URI || "mongodb://localhost/replay",
   cookie: { 
-    maxAge: 86400000 // 24 hrs
+    maxAge: 43200000 // 12 hrs
   }
 };
 
@@ -31,15 +31,13 @@ app.use(session({
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Serve up static assets (usually on heroku)
+// Serve up static assets
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
 app.use(routes);
 
-
-// Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
