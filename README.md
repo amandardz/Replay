@@ -27,7 +27,7 @@ This application involves user authentication, MongoDB database storage includin
 
 We're very happy with what we managed to achieve with this app! There is still plenty of room for growth, but we achieved what we set out to accomplish and even some stretch goals.
 
-[Deployed website](Pending)
+[Deployed website](https://replayvideos.herokuapp.com/)
 
 ![View of homepage](./client/public/images/homescreen.png)
 
@@ -90,7 +90,7 @@ These are the API's and technologies that we used that we have not discussed pre
 
 Files must be downloaded from Github. Then run npm install to get the necessary node modules. Lastly run npm start.
 
-A ready version is also available at the [deployed website.](Pending)
+A ready version is also available at the [deployed website.](https://replayvideos.herokuapp.com/)
 
 ## Usage
 
