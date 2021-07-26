@@ -20,7 +20,7 @@ function Dashboard() {
   function loadPlaylists() {
     API.getPlaylists()
       .then(res => 
-        setPlaylists(res.data[0].playlists)
+        setPlaylists(res.data.playlists)
       )
       .catch(err => console.log(err));
   }
