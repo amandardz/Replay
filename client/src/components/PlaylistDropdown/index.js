@@ -66,7 +66,7 @@ function PlayListDropdown(props) {
                     .then(history.replace('/search')) 
                     .catch(err => console.error(err));
                 
-                alert('Song successfully added!');
+                alert('Video successfully added!');
             }
         }
     }

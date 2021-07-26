@@ -1,9 +1,10 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import API from "../../utils/API";
+import he from "he";
 import './style.css'
 
-function SoloPlaylistCard(props) {
+function VideoCard(props) {
 
     const history = useHistory();
 
@@ -19,7 +20,7 @@ function SoloPlaylistCard(props) {
         <div className="songCard card">
             <div className="card-body">
                 <div>
-                    <p className="card-title">{props.title}</p>
+                    <p className="card-title">{he.decode(props.title)}</p>
                 </div>
                 <button className='p-1 btn-danger' onClick={(e) => {handleDelete(e)}}>Delete</button>
             </div>
@@ -27,4 +28,4 @@ function SoloPlaylistCard(props) {
     );
 }
 
-export default SoloPlaylistCard;
+export default VideoCard;

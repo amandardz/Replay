@@ -4,7 +4,7 @@ import Navbar from '../components/Navbar'
 import Wrapper from '../components/Wrapper'
 import API from '../utils/API';
 import MusicPlayer from '../components/MusicPlayer';
-import SoloPlaylistCard from '../components/SoloPlaylistCard';
+import VideoCard from '../components/VideoCard';
 
 const Playlist = (props) => {
 
@@ -27,7 +27,7 @@ const Playlist = (props) => {
             <Container className='background'>
                 <Navbar />
                 <Wrapper>
-                    {!playlist && <div>Loading...</div>}
+                    {!playlist && <div className='text-center'>Loading...</div>}
                     {playlist  && <div>
                         <h4 className='p-2 playlistName'>{playlist.name}</h4>
                         <p className='playlistDescription'>{playlist.description}</p>
@@ -39,7 +39,7 @@ const Playlist = (props) => {
                         <div>
                             <ul className='d-flex flex-column align-items-center songCardsContainer'>
                                 {playlist.videos.map(video => {
-                                    return <SoloPlaylistCard
+                                    return <VideoCard
                                         key={video._id}
                                         videoId={video._id}
                                         title={video.title}

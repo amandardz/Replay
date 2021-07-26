@@ -27,7 +27,7 @@ const LoginCheckRoute = ({ component: Component, ...rest }) => {
         <Route {...rest} render={
             (props) => {
                 if(isLoading) {
-                    return <div>Loading...</div>
+                    return <div className='text-center'>Loading...</div>
                 }
 
                 if(loggedIn) {

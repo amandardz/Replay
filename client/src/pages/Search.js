@@ -67,7 +67,7 @@ function Search() {
                   />
                 ))
               ) : (
-                <h3 className='pt-2'>Search for songs!</h3>
+                <h3 className='pt-2'>Search for videos!</h3>
               )}
             </Container>
           </div>
