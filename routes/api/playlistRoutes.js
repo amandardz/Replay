@@ -2,7 +2,6 @@ const router = require('express').Router();
 const { Playlist, User } = require('../../models');
 
 router.get('/', (req, res) => {
-
   User
     .find(req.query)
     .populate('playlists')
@@ -29,15 +28,15 @@ router.post('/', async (req, res) => {
 });
 
 router.get('/:id', async (req, res) => {
-    try {
-      const playlistData = await Playlist.findById(req.params.id).populate('videos');
+  try {
+    const playlistData = await Playlist.findById(req.params.id).populate('videos');
 
-      res.status(200).json(playlistData);
-  
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
+    res.status(200).json(playlistData);
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 router.put('/:id/editplaylist', async (req, res) => {
@@ -53,17 +52,17 @@ router.put('/:id/editplaylist', async (req, res) => {
 });
 
 router.delete('/:id', async (req, res) => {
-    try {
-      const playlistData = await Playlist.findById(req.params.id);
+  try {
+    const playlistData = await Playlist.findById(req.params.id);
 
-      playlistData.remove();
-  
-      res.status(200).json({ playlistData, message: "Playlist deleted."});
-  
-    } catch (err) {
-      console.log(err);
-      res.status(500).json(err);
-    }
+    playlistData.remove();
+
+    res.status(200).json({ playlistData, message: "Playlist deleted."});
+
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
 });
 
 module.exports = router;

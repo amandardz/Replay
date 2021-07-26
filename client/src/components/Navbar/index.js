@@ -3,7 +3,7 @@ import { Link, useHistory } from 'react-router-dom';
 import AuthContext from '../../contexts/AuthContext';
 import './styles.css';
 
-function Navbar(props) {
+function Navbar() {
 
   const { setLoggedIn } = useContext(AuthContext);
   const history = useHistory();
@@ -17,8 +17,8 @@ function Navbar(props) {
 
       if(response.ok) {
         setLoggedIn(false);
-        history.replace('/');
         alert("Logout successful.");
+        history.replace('/');
       } else {
         alert(response.statusText);
       }

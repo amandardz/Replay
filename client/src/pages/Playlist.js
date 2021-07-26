@@ -7,52 +7,49 @@ import MusicPlayer from '../components/MusicPlayer';
 import SoloPlaylistCard from '../components/SoloPlaylistCard';
 
 const Playlist = (props) => {
-  const [playlist, setPlaylist] = useState();
 
-  useEffect(() => {
-    loadPlaylist();
-  }, []);
+    const [playlist, setPlaylist] = useState();
 
-  function loadPlaylist() {
-    API.getPlaylist(props.match.params.playlistId)
-      .then((res) => {
-        setPlaylist(res.data);
-      })
-      .catch((err) => console.log(err));
-  }
+    useEffect(() => {
+        loadPlaylist();
+    }, []);
+
+    function loadPlaylist() {
+        API.getPlaylist(props.match.params.playlistId)
+            .then((res) => {
+                setPlaylist(res.data);
+            })
+            .catch((err) => console.log(err));
+    }
   
     return (
         <>
-        <Container className='background'>
-            <Navbar />
-            <Wrapper>
-                {!playlist && <div>loading...</div>}
-                {playlist  && <div>
-                    <h4 className='p-2 playlistName'>{playlist.name}</h4>
+            <Container className='background'>
+                <Navbar />
+                <Wrapper>
+                    {!playlist && <div>Loading...</div>}
+                    {playlist  && <div>
+                        <h4 className='p-2 playlistName'>{playlist.name}</h4>
                         <p className='playlistDescription'>{playlist.description}</p>
-                    <MusicPlayer
-                        videoLinks={playlist.videos.map(video => {
-                            return video.linkId
-                        })}
-                    />
-                    <div>
-
-                        <ul className='d-flex flex-column align-items-center songCardsContainer'>
-                            {playlist.videos.map(video => {
-                                return <SoloPlaylistCard
-                                    key={video._id}
-                                    videoId={video._id}
-                                    title={video.title}
-                                    // channel={video.channel}
-                                    // description={video.description}
-                                />
+                        <MusicPlayer
+                            videoLinks={playlist.videos.map(video => {
+                                return video.linkId
                             })}
-                        </ul>
-                    </div>
-                </div>
-                }
-            </Wrapper>
-        </Container>
+                        />
+                        <div>
+                            <ul className='d-flex flex-column align-items-center songCardsContainer'>
+                                {playlist.videos.map(video => {
+                                    return <SoloPlaylistCard
+                                        key={video._id}
+                                        videoId={video._id}
+                                        title={video.title}
+                                    />
+                                })}
+                            </ul>
+                        </div>
+                    </div>}
+                </Wrapper>
+            </Container>
         </>
     );
 };

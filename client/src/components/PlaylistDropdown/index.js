@@ -58,35 +58,34 @@ function PlayListDropdown(props) {
     
         if(choice === "Add New Playlist") {
             history.replace("/addplaylist");
-            
         } else {
           
             if(formObject.title && formObject.channel && formObject.linkId) {
-
                 API.saveVideo(formObject)
                     .then(res => setPlaylists(res.data))
                     .then(history.replace('/search')) 
-                    .catch(err => console.error(err))
-                    alert('Song successfully added!');
+                    .catch(err => console.error(err));
+                
+                alert('Song successfully added!');
             }
         }
     }
 
     return (
-    <form className='playlistSelectionContainer' onSubmit={(e) => addToPlaylist(e)}>
-        <div className="playlistSelection form-group">
-            <select className="form-control" id="selectPlaylist" onChange={handleInputChange}>
-            <option className="disabled">Select &#x276F;</option>
-            <option>Add New Playlist</option>
-            {playlists.length > 0 &&
-                playlists.map(playlist => {
-                    return <option key={playlist._id}>{playlist.name}</option>
-                })
-            }
-            </select>
-            <button className='btn btn-outline-dark'>Add to Playlist</button>
-        </div>
-    </form>
+        <form className='playlistSelectionContainer' onSubmit={(e) => addToPlaylist(e)}>
+            <div className="playlistSelection form-group">
+                <select className="form-control" id="selectPlaylist" onChange={handleInputChange}>
+                    <option className="disabled">Select &#x276F;</option>
+                    <option>Add New Playlist</option>
+                    {playlists.length > 0 &&
+                        playlists.map(playlist => {
+                            return <option key={playlist._id}>{playlist.name}</option>
+                        })
+                    }
+                </select>
+                <button className='btn btn-outline-dark'>Add to Playlist</button>
+            </div>
+        </form>
     )
 }
 

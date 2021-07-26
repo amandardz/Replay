@@ -18,7 +18,6 @@ function Dashboard() {
   }, [])
 
   function loadPlaylists() {
-
     API.getPlaylists()
       .then(res => 
         setPlaylists(res.data[0].playlists)
@@ -27,9 +26,9 @@ function Dashboard() {
   }
 
   return <>
-  <Container className='background'>
-    <Navbar />
-    <Wrapper>
+    <Container className='background'>
+      <Navbar />
+      <Wrapper>
         <div className='playlistHeaderContainer'>
           <div id='playlistHeader'>
             <h1 id='playlistTitle'>My Playlists</h1>
@@ -41,11 +40,11 @@ function Dashboard() {
             {playlists.length > 0 ? (
               playlists.map(playlist => {
                 return (
-                    <PlaylistCard
-                      id={playlist._id}
-                      title={playlist.name}
-                      description={playlist.description}
-                    />
+                  <PlaylistCard
+                    id={playlist._id}
+                    title={playlist.name}
+                    description={playlist.description}
+                  />
                 );
               })
             ) : (
@@ -53,8 +52,8 @@ function Dashboard() {
             )}
           </ul>
         </div>
-    </Wrapper>
-  </Container>
+      </Wrapper>
+    </Container>
   </>
 }
 

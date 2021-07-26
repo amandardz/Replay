@@ -7,6 +7,7 @@ function PlaylistCard (props) {
 
     const handleDeleteBtn = async (e) => {
         e.preventDefault();
+
         const response = await fetch(`api/playlist/${props.id}`, {
             method: 'DELETE',
             headers: { 'Content-Type': 'application/json'}
@@ -21,7 +22,6 @@ function PlaylistCard (props) {
     
 
     return (
-
         <li className='playlistCard d-flex flex-column' key={props.id}>
             <div className='playlistInfoContainer'>
                 <p className="card-title clickable text-center text-wrap text-break p-2 m-0" onClick={() => {history.replace('/playlist/' + props.id)}}>Playlist {props.title}</p>

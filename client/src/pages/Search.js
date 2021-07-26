@@ -8,6 +8,7 @@ import Container from "../components/Container";
 import SearchResultsCard from "../components/SearchResultCard";
 
 function Search() {
+
   const [search, setSearch] = useState("");
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [results, setResults] = useState([]);
@@ -25,7 +26,6 @@ function Search() {
           }
           setSearch("");
           setIsSubmitted(false);
-          console.log(data.data.data.items);
           setResults(data.data.data.items);
         })
         .catch((err) => console.error(err));
@@ -57,14 +57,14 @@ function Search() {
             <Container>
               {results.length > 0 ? (
                 results.map((result) => (
-                    <SearchResultsCard 
-                        key={result.etag}
-                        title={result.snippet.title}
-                        channel={result.snippet.channelTitle}
-                        linkId={result.id.videoId}
-                        description={result.snippet.description}
-                        thumbnail={result.snippet.thumbnails.default}
-                    />
+                  <SearchResultsCard 
+                    key={result.etag}
+                    title={result.snippet.title}
+                    channel={result.snippet.channelTitle}
+                    linkId={result.id.videoId}
+                    description={result.snippet.description}
+                    thumbnail={result.snippet.thumbnails.default}
+                  />
                 ))
               ) : (
                 <h3 className='pt-2'>Search for songs!</h3>

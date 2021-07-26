@@ -12,7 +12,6 @@ function Login() {
   });
 
   function handleInputChange(event) {
-    // add code to control the components here
     let value = event.target.value;
     const name = event.target.name;
 
@@ -26,7 +25,6 @@ function Login() {
     e.preventDefault();
   
     if (formObject.username && formObject.password) {
-      // Send a POST request to the API endpoint
       const response = await fetch('/api/user/login', {
         method: 'POST',
         body: JSON.stringify(formObject),
@@ -56,7 +54,7 @@ function Login() {
           id='username-login'
           onChange={handleInputChange}
           name="username"
-          ></input>
+        ></input>
       </div>
       <div className='mb-3'>
         <label className='form-label'>Password</label>
@@ -66,7 +64,7 @@ function Login() {
           id='password-login'
           onChange={handleInputChange}
           name="password"
-          ></input>
+        ></input>
       </div>
       <div className='d-flex justify-content-center'>
         <button type="submit" className="btn btn-warning">Login</button>
