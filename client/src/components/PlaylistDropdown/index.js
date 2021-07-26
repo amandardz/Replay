@@ -23,7 +23,7 @@ function PlayListDropdown(props) {
 
     const loadPlaylists = () => {
         API.getPlaylists()
-            .then(res => setPlaylists(res.data[0].playlists))
+            .then(res => setPlaylists(res.data.playlists))
             .catch(err => console.log(err));
     }
 

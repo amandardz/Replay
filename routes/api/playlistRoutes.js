@@ -3,7 +3,7 @@ const { Playlist, User } = require('../../models');
 
 router.get('/', (req, res) => {
   User
-    .find(req.query)
+    .findById(req.session.user_id)
     .populate('playlists')
     .sort({ date: -1 })
     .then(dbModel => res.json(dbModel))
