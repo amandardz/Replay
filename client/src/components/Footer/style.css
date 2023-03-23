@@ -1,5 +1,5 @@
 .footerContainer {
-  background: url('/images/background.jpg');
+  background: url('../../../public/images/background.png');
   background-size: cover;
   background-attachment: fixed;
   color: #fff;
